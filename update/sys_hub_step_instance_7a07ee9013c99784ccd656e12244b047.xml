@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_hub_step_instance">
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Post Task Details">c507ae9013c99784ccd656e12244b025</action>
+        <cid>1831eb92-3d6a-45cb-b980-ff9060bb9345</cid>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Handle Errors</label>
+        <order>3</order>
+        <outputs/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_class_name>sys_hub_step_instance</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 22:16:05</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>7a07ee9013c99784ccd656e12244b047</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Handle Errors</sys_name>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sys_hub_step_instance_7a07ee9013c99784ccd656e12244b047</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 22:16:05</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=7a07ee9013c99784ccd656e12244b047"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>7a07ee9013c99784ccd656e12244b047</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 22:16:05</sys_created_on>
+        <sys_id>7607ee9013c99784ccd656e12244b057</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 22:16:05</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+  if(inputs.status_code != '200'){
+    new SlackErrorHandler().throwException(inputs.status_code,inputs.response);
+  }
+})(inputs, outputs);
+
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=7a07ee9013c99784ccd656e12244b047"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>response</field>
+        <id>7a07ee9013c99784ccd656e12244b047</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 22:16:05</sys_created_on>
+        <sys_id>fe07ee9013c99784ccd656e12244b057</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 22:16:05</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_7a07ee9013c99784ccd656e12244b047</table>
+        <value>{{step[79a31a17-d01d-416b-81f5-1dc7d5b896ee].response_body}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>7a07ee9013c99784ccd656e12244b047</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 22:16:05</sys_created_on>
+        <sys_id>f207ee9013c99784ccd656e12244b057</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 22:16:05</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>status_code</field>
+        <id>7a07ee9013c99784ccd656e12244b047</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 22:16:05</sys_created_on>
+        <sys_id>b207ee9013c99784ccd656e12244b058</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 22:16:05</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_7a07ee9013c99784ccd656e12244b047</table>
+        <value>{{step[79a31a17-d01d-416b-81f5-1dc7d5b896ee].status_code}}</value>
+    </sys_element_mapping>
+</record_update>

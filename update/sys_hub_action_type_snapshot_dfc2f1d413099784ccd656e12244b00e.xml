@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_hub_action_type_snapshot">
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <annotation/>
+        <category display_value="Webhooks">e364e24b3ba0030057a4a2e334efc4e0</category>
+        <description>&lt;p&gt;Post Incident Details to a Slack Channel using an &lt;a target="_blank" href="https://api.slack.com/incoming-webhooks"&gt;Inbound Webhook&lt;/a&gt;. Specify the Webhook URL and Incident to send.&lt;p&gt;
+
+&lt;p&gt;Optional:&lt;br&gt;
+&lt;ul&gt;
+  &lt;li&gt;Additional Message: Add a message before the record details&lt;/li&gt;
+  &lt;li&gt;Override Default Fields: Provide a comma separated list of field names to send instead of the defaults e.g. type,risk,assigned_to&lt;/li&gt;
+&lt;li&gt;If you do not specify a Username, Channel, or Icon it will post the message using the defaults as configured in your WebHook. If you specify them here, they will override those defaults&lt;/li&gt;
+&lt;li&gt;The username does not need to be setup in Slack; however, the channel and icons must already exist .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;p&gt;Note: You can direct message an existing Slack user by specifying the user id e.g. @abel as the channel input.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Note&lt;/b&gt;: Requires a subscription for production use. &lt;a target="_blank" href="https://docs.servicenow.com/?context=CSHelp:IntegrationHub-licensing-information"&gt;Read More&lt;/a&gt;.&lt;/p&gt;</description>
+        <label_cache>[{"name":"{{action.ah_webhook_url}}","label":"action➛Webhook URL","type":"action","ref":""},{"name":"{{action.ah_username}}","label":"action➛Username","type":"action","ref":""},{"name":"{{action.ah_channel}}","label":"action➛Channel","type":"action","ref":""},{"name":"{{action.ah_additional_message}}","label":"action➛Additional Message","type":"action","ref":""},{"name":"{{action.ah_override_default_fields}}","label":"action➛Override Default Fields","type":"action","ref":""},{"name":"{{action.ah_task}}","label":"action➛Task","type":"action","ref":"task"},{"name":"{{step[56b5056d-10d8-42e9-a68d-a5cdb27bbcb0].payload}}","label":"step➛Build Payload➛payload","type":"step","ref":""},{"name":"{{step[79a31a17-d01d-416b-81f5-1dc7d5b896ee].status_code}}","label":"step➛Post Message➛Status Code","type":"step","ref":""},{"name":"{{step[79a31a17-d01d-416b-81f5-1dc7d5b896ee].response_body}}","label":"step➛Post Message➛Response Body","type":"step","ref":""}]</label_cache>
+        <name>Post Task Details</name>
+        <outputs/>
+        <parent_action display_value="Post Task Details">6990b15413099784ccd656e12244b0b5</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 18:27:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>dfc2f1d413099784ccd656e12244b00e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Post Task Details</sys_name>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sys_hub_action_type_snapshot_dfc2f1d413099784ccd656e12244b00e</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 18:27:51</sys_updated_on>
+        <system_level>false</system_level>
+    </sys_hub_action_type_snapshot>
+    <sys_variable_value action="delete_multiple" query="document_key=dfc2f1d413099784ccd656e12244b00e"/>
+</record_update>
