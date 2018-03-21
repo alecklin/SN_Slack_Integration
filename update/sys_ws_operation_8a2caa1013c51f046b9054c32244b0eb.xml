@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml,application/x-www-form-urlencoded</consumes>
+        <consumes_customized>true</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>POST</http_method>
+        <name>Message Action</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	var payloadString = request.queryParams.payload + '';
+	var message = new global.JSON().decode(payloadString);
+	
+	var su = new SlackUtils();
+	try {
+		var responseBody = su.generateResponse(message);
+		var jsonBody = new global.JSON().encode(responseBody);
+		gs.info('Response body: ' + jsonBody);
+		response.setContentType('application/json');
+		response.setStatus(200);
+		// Need to use the stream writer so that our response doesn't get wrapped in {"result":...}
+		var writer = response.getStreamWriter();
+		writer.writeString(jsonBody);
+	} catch (error) {
+		response.setStatus(error.status);
+		response.setError(error.message);
+	}
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_snc_sn_slack_int/slack_inbound</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>false</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>ben.yukich</sys_created_by>
+        <sys_created_on>2018-03-20 22:59:26</sys_created_on>
+        <sys_id>8a2caa1013c51f046b9054c32244b0eb</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Message Action</sys_name>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sys_ws_operation_8a2caa1013c51f046b9054c32244b0eb</sys_update_name>
+        <sys_updated_by>ben.yukich</sys_updated_by>
+        <sys_updated_on>2018-03-21 03:52:35</sys_updated_on>
+        <web_service_definition display_value="Slack Inbound">ca6be21013c51f046b9054c32244b0e5</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

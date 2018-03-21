@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="ah_additional_message" label="Additional Message" language="en" table="var__m_sys_hub_action_input_fbf7b2d813c51f046b9054c32244b033">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>ah_additional_message</element>
+            <help/>
+            <hint/>
+            <label>Additional Message</label>
+            <language>en</language>
+            <name>var__m_sys_hub_action_input_fbf7b2d813c51f046b9054c32244b033</name>
+            <plural>Additional Message</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>ben.yukich</sys_created_by>
+            <sys_created_on>2018-03-20 23:30:10</sys_created_on>
+            <sys_id>8808b2d813c51f046b9054c32244b06e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Additional Message</sys_name>
+            <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_hub_action_input_fbf7b2d813c51f046b9054c32244b033_ah_additional_message_en</sys_update_name>
+            <sys_updated_by>ben.yukich</sys_updated_by>
+            <sys_updated_on>2018-03-20 23:30:10</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

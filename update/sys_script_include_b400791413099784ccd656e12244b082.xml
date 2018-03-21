@@ -11,7 +11,78 @@
         <script><![CDATA[var SlackUtils = Class.create();
 SlackUtils.prototype = {
 	initialize: function() {
+	},
+	
+	generateResponse: function(message) {
+		var error = {
+			status: 500,
+			message: 'Unsupported action'
+		};
+		var action = message.actions[0].value;
+		var callbackId = message.callback_id;
+		var table = callbackId.split('#')[0];
+		var sysId = callbackId.split('#')[1];
+		if (table == 'em_alert') {
+			switch (action) {
+				case 'acknowledge':
+					return acknowledgeAlert();
+				case 'close':
+					return closeAlert();
+				case 'createIncident':
+					return createIncident();
+				default:
+					error.message = 'Sorry, that was an unsupported action';
+					throw error;
+			}
+		} else {
+			error.message = 'Sorry, only support em_alert for now';
+			throw error;
+		}
 		
+		function acknowledgeAlert() {
+			gs.info('acknowledgeAlert()');
+			var alertGr = new GlideRecord('em_alert');
+			alertGr.get(sysId);
+			alertGr.acknowledged = true;
+			alertGr.update();
+			return responseMessage('acknowledged the alert');
+		}
+		
+		function closeAlert() {
+			var alertGr = new GlideRecord('em_alert');
+			alertGr.get(sysId);
+			alertGr.state = 'Closed';
+			if (gs.getProperty('evt_mgmt.alert_ack_on_close') == 'true') { // if property is turned on
+				alertGr.acknowledged = true;
+			}
+			alertGr.update();
+			return responseMessage('closed the alert');
+		}
+		
+		function createIncident() {
+			var alertGr = new GlideRecord('em_alert');
+			alertGr.get(sysId);
+			global.EvtMgmtIncidentHandler.createIncident(alertGr, false);
+			return responseMessage('opened an incident for the alert');
+		}
+		
+		function responseMessage(verboseAction) {
+			var originalMessage = message.original_message;
+			gs.info('trimButtons(message): ' + new global.JSON().encode(message));
+			var attachments = originalMessage.attachments;
+			var user = message.user.id;
+			for (var i = 0; i < attachments.length; i++) {
+				var attachment = attachments[i];
+				if (!gs.nil(attachment.callback_id)) {
+					attachment.actions = '';
+					attachment.color = 'good';
+					attachment.title = 'No action needed...';
+					attachment.text = '<@' + user + '> ' + verboseAction;
+					gs.info('Altered Message: ' + new global.JSON().encode(originalMessage));
+					return originalMessage;
+				}
+			}
+		}
 	},
 	
 	htmlEscape : function(str) {
@@ -21,74 +92,108 @@ SlackUtils.prototype = {
 		.replace(/>/g, '&gt;');
 	},
 	
-	createPayload : function(inputs, defaultFields) {
-			var payload = {};
-			payload.text = this.htmlEscape(inputs.message);
-			
-			if (!gs.nil(inputs.channel.trim()))
-				payload.channel = inputs.channel.trim();
-			
-			if (!gs.nil(inputs.icon.trim()))
-				payload.icon_emoji = inputs.icon.trim();
-
-			if (!gs.nil(inputs.icon_url.trim()))
-				payload.icon_url = this.htmlEscape(inputs.icon_url.trim());
+	createAlertPayload : function(inputs, defaultFields) {
+		var payload = this.createPayload(inputs, defaultFields);
 		
-			if(!gs.nil(inputs.username.trim()))
-				payload.username = inputs.username.trim();
-			
-			payload.attachments = [];
-			
-			var fields = [];
-			var fieldsToSend = defaultFields.split(',');
-			var _this = this;
-			
-			fieldsToSend.forEach(function (fieldName) {
-				fieldName = fieldName.trim();
-				
-				var fieldValue = inputs.record.getDisplayValue(fieldName) || '';
-				var isShort = (fieldValue.length > 30 || fieldName == 'short_description') ? false : true;
-
-				if (!gs.nil(fieldValue)){
-					fieldValue = _this.htmlEscape(fieldValue);
-					fields.push({
-						"title":inputs.record[fieldName].getLabel(),
-						"value":fieldValue,
-						"short":isShort
-					});
+		payload.attachments.push({
+			title: 'What do you want to do?',
+			fallback: 'What do you want to do?',
+			callback_id: 'em_alert#' + inputs.record.sys_id,
+			color: 'warning',
+			attachment_type: 'default',
+			actions: [
+				{
+					name: 'acknowledge',
+					text: 'Acknowledge',
+					value: 'acknowledge',
+					style: 'primary',
+					type: 'button'
+				},
+				{
+					name: 'close',
+					text: 'Close',
+					value: 'close',
+					type: 'button'
+				},
+				{
+					name: 'createIncident',
+					text: 'Create Incident',
+					value: 'createIncident',
+					style: 'danger',
+					type: 'button'
 				}
-				
-			});
-			
-			var incidentNumber = inputs.record.getDisplayValue('number');
-			var recordLink = inputs.record.getLink();
-			var incidentLink = gs.getProperty('glide.servlet.uri') + recordLink;		
-			var incidentUrl = '<' + incidentLink + '|' + incidentNumber + '>';
+			]
+		});
 		
-			payload.attachments.push({
-				text: incidentUrl,
-				fallback: inputs.message,
-				fields: fields
-			});
-			
-			return payload;
-		},
+		return payload;
+	},
+	
+	createPayload : function(inputs, defaultFields) {
+		var payload = {};
+		payload.text = this.htmlEscape(inputs.message);
 		
-		type: 'SlackUtils'
-	};]]></script>
+		if (!gs.nil(inputs.channel.trim()))
+			payload.channel = inputs.channel.trim();
+		
+		if (!gs.nil(inputs.icon.trim()))
+			payload.icon_emoji = inputs.icon.trim();
+		
+		if (!gs.nil(inputs.icon_url.trim()))
+			payload.icon_url = this.htmlEscape(inputs.icon_url.trim());
+		
+		if(!gs.nil(inputs.username.trim()))
+			payload.username = inputs.username.trim();
+		
+		payload.attachments = [];
+		
+		var fields = [];
+		var fieldsToSend = defaultFields.split(',');
+		var _this = this;
+		
+		fieldsToSend.forEach(function (fieldName) {
+			fieldName = fieldName.trim();
+			
+			var fieldValue = inputs.record.getDisplayValue(fieldName) || '';
+			var isShort = (fieldValue.length > 30 || fieldName == 'short_description') ? false : true;
+			
+			if (!gs.nil(fieldValue)){
+				fieldValue = _this.htmlEscape(fieldValue);
+				fields.push({
+					"title":inputs.record[fieldName].getLabel(),
+					"value":fieldValue,
+					"short":isShort
+				});
+			}
+			
+		});
+		
+		var incidentNumber = inputs.record.getDisplayValue('number');
+		var recordLink = inputs.record.getLink();
+		var incidentLink = gs.getProperty('glide.servlet.uri') + recordLink;
+		var incidentUrl = '<' + incidentLink + '|' + incidentNumber + '>';
+		
+		payload.attachments.push({
+			text: incidentUrl,
+			fallback: inputs.message,
+			fields: fields
+		});
+		
+		return payload;
+	},
+	
+	type: 'SlackUtils'
+};]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2018-03-20 18:15:39</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>b400791413099784ccd656e12244b082</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>SlackUtils</sys_name>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy>read</sys_policy>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_script_include_b400791413099784ccd656e12244b082</sys_update_name>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 22:20:23</sys_updated_on>
+        <sys_updated_by>ben.yukich</sys_updated_by>
+        <sys_updated_on>2018-03-21 04:06:13</sys_updated_on>
     </sys_script_include>
 </record_update>
