@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="SN Slack Integration">3073b43513cd9300ccd656e12244b0a1</application>
+        <assessment/>
+        <content_page/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>DIRECT</link_type>
+        <map_page/>
+        <mobile_title>Preferences</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_snc_sn_slack_int_preference</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query>/slack_integration</query>
+        <report/>
+        <roles>x_snc_sn_slack_int.sn_slack_integration</roles>
+        <survey/>
+        <survey_overwrite>true</survey_overwrite>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 05:43:09</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a2b3b83513cd9300ccd656e12244b0ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Configuration</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sys_app_module_a2b3b83513cd9300ccd656e12244b0ea</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 05:43:09</sys_updated_on>
+        <timeline_page/>
+        <title>Configuration</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_snc_sn_slack_int_preference</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_snc_sn_slack_int_preference">name=enable_integration^valueVALCHANGES^EQ<item endquery="false" field="name" goto="false" newquery="false" operator="=" or="false" value="enable_integration"/>
+            <item endquery="false" field="value" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Enable Slack Integration</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	
+	// Add your code here
+	var gri = new GlideRecord("sys_hub_trigger_instance");
+	if (!gri.get("flow","ec5d18341389d3043b3a53b32244b0a7")) // the flow is "Send alert with critical severity"
+		return; 
+
+	var gr = new GlideRecord("sys_flow_trigger");
+	if (!gr.get(gri.remote_sys_id))
+		return;
+	
+	var result = false;
+	if (current.value == "true")
+		result = true;
+
+	gr.active = result;
+	gr.update();
+
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 05:50:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b235b8f513cd9300ccd656e12244b016</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Enable Slack Integration</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sys_script_b235b8f513cd9300ccd656e12244b016</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 05:50:30</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=b235b8f513cd9300ccd656e12244b016"/>
+</record_update>

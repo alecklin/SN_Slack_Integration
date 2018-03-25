@@ -2,7 +2,6 @@
 <record_update table="sys_hub_action_instance">
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
-        <action_inputs/>
         <action_type display_value="Post Task Details">9b739e5013899784ccd656e12244b0ff</action_type>
         <comment/>
         <compiled_snapshot display_value="Post Task Details">9b739e5013899784ccd656e12244b0ff</compiled_snapshot>
@@ -13,159 +12,17 @@
         <sys_class_name>sys_hub_action_instance</sys_class_name>
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2018-03-20 20:56:47</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>09e412d013899784ccd656e12244b09d</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_hub_action_instance_09e412d013899784ccd656e12244b09d</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
         <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
         <ui_id>558a83de-ed1b-461d-9ca4-5698f3f73103</ui_id>
     </sys_hub_action_instance>
-    <sys_variable_value action="delete_multiple" query="document_key=09e412d013899784ccd656e12244b09d"/>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_action_instance</document>
-        <document_key>09e412d013899784ccd656e12244b09d</document_key>
-        <order>2</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2018-03-20 20:56:47</sys_created_on>
-        <sys_id>09e452d013899784ccd656e12244b005</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
-        <value>ROAR</value>
-        <variable display_value="">1c83de5013899784ccd656e12244b042</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_action_instance</document>
-        <document_key>09e412d013899784ccd656e12244b09d</document_key>
-        <order>5</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2018-03-20 20:56:47</sys_created_on>
-        <sys_id>45e452d013899784ccd656e12244b005</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
-        <value>#general</value>
-        <variable display_value="">a483de5013899784ccd656e12244b080</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_action_instance</document>
-        <document_key>09e412d013899784ccd656e12244b09d</document_key>
-        <order>4</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2018-03-20 20:56:47</sys_created_on>
-        <sys_id>81e452d013899784ccd656e12244b005</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
-        <value>Kitty Purry</value>
-        <variable display_value="">9083de5013899784ccd656e12244b074</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_action_instance</document>
-        <document_key>09e412d013899784ccd656e12244b09d</document_key>
-        <order>0</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2018-03-20 20:56:47</sys_created_on>
-        <sys_id>c9e452d013899784ccd656e12244b005</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
-        <value>https://store.servicenow.com/sn_appstore_store.do#!/store/application/17981dcc0fe80200a1e1ba8ce1050ea9</value>
-        <variable display_value="">d773de5013899784ccd656e12244b002</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_action_instance</document>
-        <document_key>09e412d013899784ccd656e12244b09d</document_key>
-        <order>6</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2018-03-20 20:56:47</sys_created_on>
-        <sys_id>cde452d013899784ccd656e12244b004</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
-        <value>:)</value>
-        <variable display_value="">a883de5013899784ccd656e12244b08c</variable>
-    </sys_variable_value>
-    <sys_element_mapping action="delete_multiple" query="id=09e412d013899784ccd656e12244b09d"/>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>ah_additional_message</field>
-        <id>09e412d013899784ccd656e12244b09d</id>
-        <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2018-03-20 20:56:47</sys_created_on>
-        <sys_id>89e452d013899784ccd656e12244b004</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
-        <table>var__m_sys_hub_action_input_9b739e5013899784ccd656e12244b0ff</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>ah_channel</field>
-        <id>09e412d013899784ccd656e12244b09d</id>
-        <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2018-03-20 20:56:47</sys_created_on>
-        <sys_id>05e452d013899784ccd656e12244b004</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
-        <table>var__m_sys_hub_action_input_9b739e5013899784ccd656e12244b0ff</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>ah_icon</field>
-        <id>09e412d013899784ccd656e12244b09d</id>
-        <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2018-03-20 20:56:47</sys_created_on>
-        <sys_id>8de452d013899784ccd656e12244b003</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
-        <table>var__m_sys_hub_action_input_9b739e5013899784ccd656e12244b0ff</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>ah_task</field>
-        <id>09e412d013899784ccd656e12244b09d</id>
-        <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2018-03-20 20:56:47</sys_created_on>
-        <sys_id>c5e452d013899784ccd656e12244b004</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
-        <table>var__m_sys_hub_action_input_9b739e5013899784ccd656e12244b0ff</table>
-        <value>{{Created or Updated_1.current}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>ah_username</field>
-        <id>09e412d013899784ccd656e12244b09d</id>
-        <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2018-03-20 20:56:47</sys_created_on>
-        <sys_id>41e452d013899784ccd656e12244b004</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
-        <table>var__m_sys_hub_action_input_9b739e5013899784ccd656e12244b0ff</table>
-        <value/>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>ah_webhook_url</field>
-        <id>09e412d013899784ccd656e12244b09d</id>
-        <sys_created_by>aleck.lin</sys_created_by>
-        <sys_created_on>2018-03-20 20:56:47</sys_created_on>
-        <sys_id>4de452d013899784ccd656e12244b004</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-20 20:56:47</sys_updated_on>
-        <table>var__m_sys_hub_action_input_9b739e5013899784ccd656e12244b0ff</table>
-        <value/>
-    </sys_element_mapping>
 </record_update>

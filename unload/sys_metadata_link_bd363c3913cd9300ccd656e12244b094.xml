@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload</directory>
+        <documentkey>1cc4b0f513cd9300ccd656e12244b01a</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_snc_sn_slack_int_preference">
+    <x_snc_sn_slack_int_preference action="INSERT_OR_UPDATE">
+        <name>enable_integration</name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 05:47:38</sys_created_on>
+        <sys_id>1cc4b0f513cd9300ccd656e12244b01a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 05:47:38</sys_updated_on>
+        <value>true</value>
+    </x_snc_sn_slack_int_preference>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 05:54:01</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>bd363c3913cd9300ccd656e12244b094</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>enable_integration</sys_name>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sys_metadata_link_bd363c3913cd9300ccd656e12244b094</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 05:54:01</sys_updated_on>
+        <tablename>x_snc_sn_slack_int_preference</tablename>
+    </sys_metadata_link>
+</record_update>

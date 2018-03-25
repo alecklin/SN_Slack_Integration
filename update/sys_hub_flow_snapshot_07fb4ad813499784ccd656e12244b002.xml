@@ -6,15 +6,18 @@
         <label_cache>[{"name":"Created or Updated_1.current","label":"Trigger➛Incident Record","reference":"incident","reference_display":"Incident","type":"reference","base_type":"reference"}]</label_cache>
         <name>Slack Message pusher</name>
         <parent_flow/>
+        <remote_trigger_id/>
         <status>published</status>
         <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2018-03-20 20:17:52</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>07fb4ad813499784ccd656e12244b002</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Slack Message pusher</sys_name>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_hub_flow_snapshot_07fb4ad813499784ccd656e12244b002</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>

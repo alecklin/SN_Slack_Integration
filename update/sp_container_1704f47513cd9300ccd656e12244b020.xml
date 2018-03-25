@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_container">
+    <sp_container action="INSERT_OR_UPDATE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Slack Integration Config - Container 1</name>
+        <order>1</order>
+        <sp_page display_value="slack_integration_config">80e3b07513cd9300ccd656e12244b03a</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 05:44:34</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>1704f47513cd9300ccd656e12244b020</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Slack Integration Config - Container 1</sys_name>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sp_container_1704f47513cd9300ccd656e12244b020</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 05:44:34</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+</record_update>
