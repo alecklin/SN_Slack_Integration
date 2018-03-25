@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <annotation/>
+        <category/>
+        <description/>
+        <label_cache>[{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].webhook_url}}","label":"step➛Gather preferences➛webhook_url","type":"step","ref":""},{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].username}}","label":"step➛Gather preferences➛username","type":"step","ref":""},{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].}}","label":"step➛Gather preferences➛","type":"step","ref":""},{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].channel}}","label":"step➛Gather preferences➛channel","type":"step","ref":""},{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].i}}","label":"step➛Gather preferences➛i","type":"step","ref":""},{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].ic}}","label":"step➛Gather preferences➛ic","type":"step","ref":""},{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].ico}}","label":"step➛Gather preferences➛ico","type":"step","ref":""},{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].icon}}","label":"step➛Gather preferences➛icon","type":"step","ref":""},{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].icon_}}","label":"step➛Gather preferences➛icon_","type":"step","ref":""},{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].icon_u}}","label":"step➛Gather preferences➛icon_u","type":"step","ref":""},{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].icon_ur}}","label":"step➛Gather preferences➛icon_ur","type":"step","ref":""},{"name":"{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].icon_url}}","label":"step➛Gather preferences➛icon_url","type":"step","ref":""}]</label_cache>
+        <latest_snapshot display_value="Get Slack Preferences">2f39f03d13cd9300ccd656e12244b0c3</latest_snapshot>
+        <name>Get Slack Preferences</name>
+        <outputs/>
+        <outputs/>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:01:11</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>aad7f8b913cd9300ccd656e12244b05c</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Get Slack Preferences</sys_name>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_aad7f8b913cd9300ccd656e12244b05c</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:07:17</sys_updated_on>
+        <system_level>false</system_level>
+    </sys_hub_action_type_definition>
+    <sys_variable_value action="delete_multiple" query="document_key=aad7f8b913cd9300ccd656e12244b05c"/>
+    <sys_element_mapping action="delete_multiple" query="id=aad7f8b913cd9300ccd656e12244b05c"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>channel</field>
+        <id>aad7f8b913cd9300ccd656e12244b05c</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:06:53</sys_created_on>
+        <sys_id>5e29b03d13cd9300ccd656e12244b000</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:06:53</sys_updated_on>
+        <table>var__m_sys_hub_action_output_aad7f8b913cd9300ccd656e12244b05c</table>
+        <value>{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].channel}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>icon</field>
+        <id>aad7f8b913cd9300ccd656e12244b05c</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:06:53</sys_created_on>
+        <sys_id>1229b03d13cd9300ccd656e12244b001</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:06:53</sys_updated_on>
+        <table>var__m_sys_hub_action_output_aad7f8b913cd9300ccd656e12244b05c</table>
+        <value>{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].icon}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>icon_url</field>
+        <id>aad7f8b913cd9300ccd656e12244b05c</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:06:53</sys_created_on>
+        <sys_id>9a29b03d13cd9300ccd656e12244b000</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:06:53</sys_updated_on>
+        <table>var__m_sys_hub_action_output_aad7f8b913cd9300ccd656e12244b05c</table>
+        <value>{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].icon_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>username</field>
+        <id>aad7f8b913cd9300ccd656e12244b05c</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:06:53</sys_created_on>
+        <sys_id>9629b03d13cd9300ccd656e12244b001</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:06:53</sys_updated_on>
+        <table>var__m_sys_hub_action_output_aad7f8b913cd9300ccd656e12244b05c</table>
+        <value>{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].username}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>webhook_url</field>
+        <id>aad7f8b913cd9300ccd656e12244b05c</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:06:53</sys_created_on>
+        <sys_id>d229b03d13cd9300ccd656e12244b001</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:06:53</sys_updated_on>
+        <table>var__m_sys_hub_action_output_aad7f8b913cd9300ccd656e12244b05c</table>
+        <value>{{step[329d9f21-1c1d-4f60-869f-3a34b1cab869].webhook_url}}</value>
+    </sys_element_mapping>
+</record_update>
