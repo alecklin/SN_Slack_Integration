@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_hub_action_instance">
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_type display_value="Post Alert Details">d392c9751301d300ccd656e12244b061</action_type>
+        <comment/>
+        <compiled_snapshot display_value="Post Alert Details">d392c9751301d300ccd656e12244b061</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Send alert with critical severity">4a4143d213891b00ccd656e12244b0ec</flow>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 05:18:34</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>464183d213891b00ccd656e12244b005</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sys_hub_action_instance_464183d213891b00ccd656e12244b005</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 05:18:35</sys_updated_on>
+        <ui_id>0815c588-cfb0-4f51-9ce6-79a323d7d5be</ui_id>
+    </sys_hub_action_instance>
+</record_update>

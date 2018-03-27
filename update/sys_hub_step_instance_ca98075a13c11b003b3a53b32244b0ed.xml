@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_hub_step_instance">
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Post Alert Details">a098c35a13c11b003b3a53b32244b099</action>
+        <cid>1831eb92-3d6a-45cb-b980-ff9060bb9345</cid>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Handle Errors</label>
+        <order>3</order>
+        <outputs/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_class_name>sys_hub_step_instance</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 05:50:32</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ca98075a13c11b003b3a53b32244b0ed</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Handle Errors</sys_name>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sys_hub_step_instance_ca98075a13c11b003b3a53b32244b0ed</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 05:50:32</sys_updated_on>
+    </sys_hub_step_instance>
+</record_update>
