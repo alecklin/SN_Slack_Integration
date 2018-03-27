@@ -8,15 +8,51 @@
         <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
         <http_method>POST</http_method>
         <name>Message Action</name>
-        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
-	var payloadString = request.queryParams.payload + '';
-	var message = new global.JSON().decode(payloadString);
+        <operation_script><![CDATA[/* 
+* Authors: Ben.Yukich@ServiceNow.com & Aleck.Lin@ServiceNow.com
+*/
+
+(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	var debugFlag = false;
 	
-	var su = new SlackUtils();
+	var payloadString = request.queryParams.payload + '';
+
+	var message = new global.JSON().decode(payloadString);
+	var su = new x_snc_sn_slack_int.SlackUtils();	
+	
 	try {
-		var responseBody = su.generateResponse(message);
-		var jsonBody = new global.JSON().encode(responseBody);
-		gs.info('Response body: ' + jsonBody);
+		var jsonBody;
+			
+		var targetInstance = findTargetInstance(message);
+		var currentInstanceName = gs.getProperty('instance_name');
+		
+		if (gs.nil(targetInstance) || targetInstance == currentInstanceName){
+			debug("No Relay!");
+			var responseBody = su.generateResponse(message);	
+			jsonBody = new global.JSON().encode(responseBody);
+			
+		} else {
+			debug("Need to relay!");			
+			var targetUrl = "https://" + targetInstance + ".service-now.com";
+
+			var restMessage = new sn_ws.RESTMessageV2();
+			restMessage.setHttpMethod("post");
+			restMessage.setEndpoint(targetUrl + "/api/x_snc_sn_slack_int/slack_inbound");
+			restMessage.setRequestHeader('Content-Type','application/x-www-form-urlencoded');	
+			restMessage.setQueryParameter("payload", payloadString);					
+			var targetResponse = restMessage.execute();
+
+			if (targetResponse.getStatusCode() != 200) { //Print out message is somehow the target instance is not acccessible
+				gs.info("Unable to post to " + targetInstance + ". Error code is " + targetResponse.getStatusCode() + ". The error msg is " + targetResponse.getErrorMessage());
+				response.setStatus(targetResponse.getStatusCode());
+				response.setError(targetResponse.getErrorMessage());
+				return false;
+			}
+
+			jsonBody = targetResponse.getBody();	
+		}
+		
+		debug('Response body: ' + jsonBody);
 		response.setContentType('application/json');
 		response.setStatus(200);
 		// Need to use the stream writer so that our response doesn't get wrapped in {"result":...}
@@ -26,6 +62,40 @@
 		response.setStatus(error.status);
 		response.setError(error.message);
 	}
+	
+	function findTargetInstance(message) {				
+		var attachments = message.original_message.attachments;	
+		var text;
+		
+		for (var i = 0; i < attachments.length; i++) {
+				var attachment = attachments[i];
+				if (gs.nil(attachment.callback_id)) {
+					text = attachment.text; // it looks something like this => <https://itompractice.service-now.com/em_alert.do?sys_id=1dacf8fd13cd9300ccd656e12244b0bb&amp;sysparm_stack=em_alert_list.do?sysparm_query=active=true|Alert0010073>		
+				}
+		}
+		
+		if (gs.nil(text)) {
+			gs.info("Slack Inbound: Unable to find text");
+			return;
+		}
+		
+		var regex = /http.+\/\/(.+?)\./;	
+		var match = regex.exec(text);
+
+		if (match.length == 2) {
+			var targetInstance = match[1];
+			return targetInstance;
+		}
+
+		return;		
+	}
+	
+	function debug(msg) {
+		if (debugFlag)
+			gs.info("Slack Inbound: " + msg);
+	}
+ 	
+	
 })(request, response);]]></operation_script>
         <operation_uri>/api/x_snc_sn_slack_int/slack_inbound</operation_uri>
         <produces>application/json,application/xml,text/xml</produces>
@@ -40,15 +110,15 @@
         <sys_created_on>2018-03-20 22:59:26</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>8a2caa1013c51f046b9054c32244b0eb</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>69</sys_mod_count>
         <sys_name>Message Action</sys_name>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_ws_operation_8a2caa1013c51f046b9054c32244b0eb</sys_update_name>
-        <sys_updated_by>ben.yukich</sys_updated_by>
-        <sys_updated_on>2018-03-21 03:52:35</sys_updated_on>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 04:12:18</sys_updated_on>
         <web_service_definition display_value="Slack Inbound">ca6be21013c51f046b9054c32244b0e5</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

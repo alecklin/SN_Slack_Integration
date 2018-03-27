@@ -4,13 +4,13 @@
         <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
         <plan/>
         <plan_id>ad69343d13cd9300ccd656e12244b080</plan_id>
-        <snapshot>d6d241b51301d300ccd656e12244b019</snapshot>
+        <snapshot>e939c246134d5700ccd656e12244b066</snapshot>
         <sys_class_name>sys_flow_trigger_plan</sys_class_name>
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2018-03-25 06:12:34</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>617ab47d13cd9300ccd656e12244b0d4</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>2d7ab47d13cd9300ccd656e12244b0d1</sys_name>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
@@ -18,7 +18,7 @@
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_flow_trigger_plan_617ab47d13cd9300ccd656e12244b0d4</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-25 06:49:13</sys_updated_on>
+        <sys_updated_on>2018-03-26 06:35:08</sys_updated_on>
         <trigger display_value="">2d7ab47d13cd9300ccd656e12244b0d1</trigger>
     </sys_flow_trigger_plan>
 </record_update>
