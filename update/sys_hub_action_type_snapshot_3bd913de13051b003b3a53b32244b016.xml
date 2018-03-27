@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_hub_action_type_snapshot">
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <annotation/>
+        <category/>
+        <description/>
+        <label_cache>[{"name":"{{step[c0c6316c-4cf8-4a08-85d9-85a58cde04b5].h}}","label":"step➛Script step➛h","type":"step","ref":""},{"name":"{{step[c0c6316c-4cf8-4a08-85d9-85a58cde04b5].he}}","label":"step➛Script step➛he","type":"step","ref":""},{"name":"{{step[c0c6316c-4cf8-4a08-85d9-85a58cde04b5].hel}}","label":"step➛Script step➛hel","type":"step","ref":""},{"name":"{{step[c0c6316c-4cf8-4a08-85d9-85a58cde04b5].hell}}","label":"step➛Script step➛hell","type":"step","ref":""},{"name":"{{step[c0c6316c-4cf8-4a08-85d9-85a58cde04b5].hello}}","label":"step➛Script step➛hello","type":"step","ref":""}]</label_cache>
+        <name>Test Slacker Action</name>
+        <outputs/>
+        <outputs/>
+        <parent_action display_value="Test Slacker Action">d7a91b9e13051b003b3a53b32244b0d6</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 07:06:01</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3bd913de13051b003b3a53b32244b016</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Test Slacker Action</sys_name>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sys_hub_action_type_snapshot_3bd913de13051b003b3a53b32244b016</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 07:06:01</sys_updated_on>
+        <system_level>false</system_level>
+    </sys_hub_action_type_snapshot>
+    <sys_variable_value action="delete_multiple" query="document_key=3bd913de13051b003b3a53b32244b016"/>
+    <sys_element_mapping action="delete_multiple" query="id=3bd913de13051b003b3a53b32244b016"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>hello</field>
+        <id>3bd913de13051b003b3a53b32244b016</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 07:06:01</sys_created_on>
+        <sys_id>3fd913de13051b003b3a53b32244b03b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 07:06:01</sys_updated_on>
+        <table>var__m_sys_hub_action_output_3bd913de13051b003b3a53b32244b016</table>
+        <value>{{step[c0c6316c-4cf8-4a08-85d9-85a58cde04b5].hello}}</value>
+    </sys_element_mapping>
+</record_update>
