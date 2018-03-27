@@ -25,4 +25,47 @@
         <sys_updated_on>2018-03-20 18:40:09</sys_updated_on>
         <ui_id>4f983109-baff-4978-8f03-115aa4850915</ui_id>
     </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=37957d5813099784ccd656e12244b05c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>37957d5813099784ccd656e12244b05c</document_key>
+        <order>4</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 18:40:09</sys_created_on>
+        <sys_id>3b957d5813099784ccd656e12244b05f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 18:40:09</sys_updated_on>
+        <value>HelloKitty</value>
+        <variable display_value="">4095f95813099784ccd656e12244b0ae</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>37957d5813099784ccd656e12244b05c</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 18:40:09</sys_created_on>
+        <sys_id>bf957d5813099784ccd656e12244b05f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 18:40:09</sys_updated_on>
+        <value>https://hooks.slack.com/services/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</value>
+        <variable display_value="">e785f95813099784ccd656e12244b055</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>37957d5813099784ccd656e12244b05c</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 18:40:09</sys_created_on>
+        <sys_id>fb957d5813099784ccd656e12244b05f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 18:40:09</sys_updated_on>
+        <value>Hello!</value>
+        <variable display_value="">3785f95813099784ccd656e12244b070</variable>
+    </sys_variable_value>
 </record_update>

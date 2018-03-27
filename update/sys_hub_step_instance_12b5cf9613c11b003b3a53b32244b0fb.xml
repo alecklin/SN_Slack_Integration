@@ -26,4 +26,24 @@
         <sys_updated_by>aleck.lin</sys_updated_by>
         <sys_updated_on>2018-03-27 05:37:59</sys_updated_on>
     </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=12b5cf9613c11b003b3a53b32244b0fb"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>12b5cf9613c11b003b3a53b32244b0fb</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 05:37:59</sys_created_on>
+        <sys_id>dab503d613c11b003b3a53b32244b002</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 05:37:59</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+// ... code ...
+  
+  //Action deisngeR! 
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
 </record_update>

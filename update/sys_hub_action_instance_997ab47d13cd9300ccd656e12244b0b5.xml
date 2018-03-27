@@ -2,6 +2,7 @@
 <record_update table="sys_hub_action_instance">
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
+        <action_inputs/>
         <action_type display_value="Post Alert Details">ab64275013891f046b9054c32244b0be</action_type>
         <comment/>
         <compiled_snapshot display_value="Post Alert Details">ab64275013891f046b9054c32244b0be</compiled_snapshot>
@@ -25,4 +26,78 @@
         <sys_updated_on>2018-03-25 06:12:33</sys_updated_on>
         <ui_id>0815c588-cfb0-4f51-9ce6-79a323d7d5be</ui_id>
     </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=997ab47d13cd9300ccd656e12244b0b5"/>
+    <sys_element_mapping action="delete_multiple" query="id=997ab47d13cd9300ccd656e12244b0b5"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_alert</field>
+        <id>997ab47d13cd9300ccd656e12244b0b5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:12:33</sys_created_on>
+        <sys_id>557ab47d13cd9300ccd656e12244b0b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:12:33</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{Created or Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_channel</field>
+        <id>997ab47d13cd9300ccd656e12244b0b5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:12:33</sys_created_on>
+        <sys_id>917ab47d13cd9300ccd656e12244b0b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:12:33</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.channel}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon</field>
+        <id>997ab47d13cd9300ccd656e12244b0b5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:12:33</sys_created_on>
+        <sys_id>1d7ab47d13cd9300ccd656e12244b0b7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:12:33</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon_url</field>
+        <id>997ab47d13cd9300ccd656e12244b0b5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:12:33</sys_created_on>
+        <sys_id>d97ab47d13cd9300ccd656e12244b0b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:12:33</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_username</field>
+        <id>997ab47d13cd9300ccd656e12244b0b5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:12:33</sys_created_on>
+        <sys_id>dd7ab47d13cd9300ccd656e12244b0b7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:12:33</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.username}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_webhook_url</field>
+        <id>997ab47d13cd9300ccd656e12244b0b5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:12:33</sys_created_on>
+        <sys_id>197ab47d13cd9300ccd656e12244b0b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:12:33</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.webhook_url}}</value>
+    </sys_element_mapping>
 </record_update>

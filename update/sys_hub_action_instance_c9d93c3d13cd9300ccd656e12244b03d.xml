@@ -2,6 +2,7 @@
 <record_update table="sys_hub_action_instance">
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
+        <action_inputs/>
         <action_type display_value="Post Alert Details">a098c35a13c11b003b3a53b32244b099</action_type>
         <comment/>
         <compiled_snapshot/>
@@ -25,4 +26,294 @@
         <sys_updated_on>2018-03-27 05:52:48</sys_updated_on>
         <ui_id>0815c588-cfb0-4f51-9ce6-79a323d7d5be</ui_id>
     </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=c9d93c3d13cd9300ccd656e12244b03d"/>
+    <sys_element_mapping action="delete_multiple" query="id=c9d93c3d13cd9300ccd656e12244b03d"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_alert</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:48</sys_created_on>
+        <sys_id>4dd93c3d13cd9300ccd656e12244b040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_fbf7b2d813c51f046b9054c32244b033</table>
+        <value>{{Created or Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_alert</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:49</sys_created_on>
+        <sys_id>8dd93c3d13cd9300ccd656e12244b062</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{Created or Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_alert</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 05:52:06</sys_created_on>
+        <sys_id>cdf88b5a13c11b003b3a53b32244b003</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 05:52:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_a098c35a13c11b003b3a53b32244b099</table>
+        <value>{{Created or Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_alert</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:48:23</sys_created_on>
+        <sys_id>d2a249751301d300ccd656e12244b0d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:48:23</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{Created or Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_channel</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 05:52:06</sys_created_on>
+        <sys_id>0df88b5a13c11b003b3a53b32244b003</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 05:52:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_a098c35a13c11b003b3a53b32244b099</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.channel}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_channel</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:48:23</sys_created_on>
+        <sys_id>12a249751301d300ccd656e12244b0d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:48:23</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.channel}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_channel</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:48</sys_created_on>
+        <sys_id>89d93c3d13cd9300ccd656e12244b040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_fbf7b2d813c51f046b9054c32244b033</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.channel}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_channel</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:49</sys_created_on>
+        <sys_id>c9d93c3d13cd9300ccd656e12244b062</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.channel}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:48</sys_created_on>
+        <sys_id>05d93c3d13cd9300ccd656e12244b040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_fbf7b2d813c51f046b9054c32244b033</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:49</sys_created_on>
+        <sys_id>45d93c3d13cd9300ccd656e12244b062</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 05:52:06</sys_created_on>
+        <sys_id>85f88b5a13c11b003b3a53b32244b003</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 05:52:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_a098c35a13c11b003b3a53b32244b099</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:48:23</sys_created_on>
+        <sys_id>9aa249751301d300ccd656e12244b0d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:48:23</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon_url</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:49</sys_created_on>
+        <sys_id>05d93c3d13cd9300ccd656e12244b063</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon_url</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 05:52:06</sys_created_on>
+        <sys_id>45f88b5a13c11b003b3a53b32244b004</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 05:52:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_a098c35a13c11b003b3a53b32244b099</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon_url</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:48:24</sys_created_on>
+        <sys_id>5aa249751301d300ccd656e12244b0d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:48:24</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon_url</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:48</sys_created_on>
+        <sys_id>c1d93c3d13cd9300ccd656e12244b041</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_fbf7b2d813c51f046b9054c32244b033</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_username</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:49</sys_created_on>
+        <sys_id>09d93c3d13cd9300ccd656e12244b062</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.username}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_username</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 05:52:06</sys_created_on>
+        <sys_id>49f88b5a13c11b003b3a53b32244b003</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 05:52:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_a098c35a13c11b003b3a53b32244b099</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.username}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_username</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:48:23</sys_created_on>
+        <sys_id>5ea249751301d300ccd656e12244b0d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:48:23</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.username}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_username</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:48</sys_created_on>
+        <sys_id>c5d93c3d13cd9300ccd656e12244b040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_fbf7b2d813c51f046b9054c32244b033</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.username}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_webhook_url</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:48</sys_created_on>
+        <sys_id>01d93c3d13cd9300ccd656e12244b041</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_fbf7b2d813c51f046b9054c32244b033</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.webhook_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_webhook_url</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:09:49</sys_created_on>
+        <sys_id>41d93c3d13cd9300ccd656e12244b063</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:09:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab64275013891f046b9054c32244b0be</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.webhook_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_webhook_url</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 05:52:06</sys_created_on>
+        <sys_id>81f88b5a13c11b003b3a53b32244b004</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 05:52:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_a098c35a13c11b003b3a53b32244b099</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.webhook_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_webhook_url</field>
+        <id>c9d93c3d13cd9300ccd656e12244b03d</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:48:24</sys_created_on>
+        <sys_id>96a249751301d300ccd656e12244b0d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 06:48:24</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.webhook_url}}</value>
+    </sys_element_mapping>
 </record_update>

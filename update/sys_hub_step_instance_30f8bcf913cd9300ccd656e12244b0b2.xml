@@ -16,7 +16,7 @@
         <sys_created_on>2018-03-25 06:05:58</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>30f8bcf913cd9300ccd656e12244b0b2</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>Gather preferences</sys_name>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
@@ -24,6 +24,54 @@
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_hub_step_instance_30f8bcf913cd9300ccd656e12244b0b2</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-27 05:49:32</sys_updated_on>
+        <sys_updated_on>2018-03-27 06:50:41</sys_updated_on>
     </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=30f8bcf913cd9300ccd656e12244b0b2"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>30f8bcf913cd9300ccd656e12244b0b2</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 16:40:38</sys_created_on>
+        <sys_id>2d3a07f113c15700ccd656e12244b08e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-25 16:40:38</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">6d3a03f113c15700ccd656e12244b0fa</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>30f8bcf913cd9300ccd656e12244b0b2</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-25 06:05:59</sys_created_on>
+        <sys_id>4df8bcf913cd9300ccd656e12244b0d8</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 06:50:41</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+      
+  var gr = new GlideRecord("x_snc_sn_slack_int_preference");
+  gr.query();
+  while (gr.next()) { 
+    var name = gr.name.toString();
+    if (name == "webhook_url")
+      outputs.webhook_url = gr.value.toString();
+   	else if (name == "username")
+      outputs.username = gr.value.toString();
+    else if (name == "channel")
+      outputs.channel = gr.value.toString();
+    else if (name == "icon")
+      outputs.icon = gr.value.toString();
+    else if (name == "icon_url")     
+      outputs.icon_url = gr.value.toString();    
+  }
+  
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
 </record_update>

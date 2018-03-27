@@ -25,4 +25,5 @@
         <sys_updated_on>2018-03-25 06:12:33</sys_updated_on>
         <ui_id>ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9</ui_id>
     </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=597ab47d13cd9300ccd656e12244b0b1"/>
 </record_update>

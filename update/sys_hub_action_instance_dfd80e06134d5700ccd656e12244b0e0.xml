@@ -2,6 +2,7 @@
 <record_update table="sys_hub_action_instance">
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
+        <action_inputs/>
         <action_type display_value="Post Alert Details">d392c9751301d300ccd656e12244b061</action_type>
         <comment/>
         <compiled_snapshot display_value="Post Alert Details">d392c9751301d300ccd656e12244b061</compiled_snapshot>
@@ -25,4 +26,78 @@
         <sys_updated_on>2018-03-26 06:33:36</sys_updated_on>
         <ui_id>0815c588-cfb0-4f51-9ce6-79a323d7d5be</ui_id>
     </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=dfd80e06134d5700ccd656e12244b0e0"/>
+    <sys_element_mapping action="delete_multiple" query="id=dfd80e06134d5700ccd656e12244b0e0"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_alert</field>
+        <id>dfd80e06134d5700ccd656e12244b0e0</id>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2018-03-26 06:33:36</sys_created_on>
+        <sys_id>9bd80e06134d5700ccd656e12244b0e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-03-26 06:33:36</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{Created or Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_channel</field>
+        <id>dfd80e06134d5700ccd656e12244b0e0</id>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2018-03-26 06:33:36</sys_created_on>
+        <sys_id>d7d80e06134d5700ccd656e12244b0e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-03-26 06:33:36</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.channel}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon</field>
+        <id>dfd80e06134d5700ccd656e12244b0e0</id>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2018-03-26 06:33:36</sys_created_on>
+        <sys_id>53d80e06134d5700ccd656e12244b0e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-03-26 06:33:36</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon_url</field>
+        <id>dfd80e06134d5700ccd656e12244b0e0</id>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2018-03-26 06:33:36</sys_created_on>
+        <sys_id>13d80e06134d5700ccd656e12244b0e4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-03-26 06:33:36</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.icon_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_username</field>
+        <id>dfd80e06134d5700ccd656e12244b0e0</id>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2018-03-26 06:33:36</sys_created_on>
+        <sys_id>17d80e06134d5700ccd656e12244b0e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-03-26 06:33:36</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.username}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_webhook_url</field>
+        <id>dfd80e06134d5700ccd656e12244b0e0</id>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2018-03-26 06:33:36</sys_created_on>
+        <sys_id>5fd80e06134d5700ccd656e12244b0e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-03-26 06:33:36</sys_updated_on>
+        <table>var__m_sys_hub_action_input_d392c9751301d300ccd656e12244b061</table>
+        <value>{{ecf8132a-4b2e-4e2c-b7fa-d22584ae28c9.webhook_url}}</value>
+    </sys_element_mapping>
 </record_update>

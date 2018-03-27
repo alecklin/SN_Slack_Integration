@@ -26,4 +26,52 @@
         <sys_updated_by>aleck.lin</sys_updated_by>
         <sys_updated_on>2018-03-27 05:49:34</sys_updated_on>
     </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=7b58035a13c11b003b3a53b32244b0bf"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>7b58035a13c11b003b3a53b32244b0bf</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 05:49:35</sys_created_on>
+        <sys_id>0068035a13c11b003b3a53b32244b0ed</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 05:49:35</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+  
+  var gr = new GlideRecord("x_snc_sn_slack_int_preference");
+  gr.query();
+  while (gr.next()) { 
+    var name = gr.name.toString();
+    if (name == "webhook_url")
+      outputs.webhook_url = gr.value.toString();
+   	else if (name == "username")
+      outputs.username = gr.value.toString();
+    else if (name == "channel")
+      outputs.channel = gr.value.toString();
+    else if (name == "icon")
+      outputs.icon = gr.value.toString();
+    else if (name == "icon_url")     
+      outputs.icon_url = gr.value.toString();    
+  }
+  
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>7b58035a13c11b003b3a53b32244b0bf</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-27 05:49:35</sys_created_on>
+        <sys_id>0c68035a13c11b003b3a53b32244b0ed</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-27 05:49:35</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">3758035a13c11b003b3a53b32244b0c3</variable>
+    </sys_variable_value>
 </record_update>

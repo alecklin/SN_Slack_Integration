@@ -2,6 +2,7 @@
 <record_update table="sys_hub_action_instance">
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
         <action_inputs/>
+        <action_inputs/>
         <action_type display_value="Post Task Details">dafcd29813899784ccd656e12244b062</action_type>
         <comment/>
         <compiled_snapshot display_value="Post Task Details">dafcd29813899784ccd656e12244b062</compiled_snapshot>
@@ -25,4 +26,148 @@
         <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
         <ui_id>558a83de-ed1b-461d-9ca4-5698f3f73103</ui_id>
     </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=c841ea5c13899784ccd656e12244b0b0"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>c841ea5c13899784ccd656e12244b0b0</document_key>
+        <order>7</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 21:50:47</sys_created_on>
+        <sys_id>0841ea5c13899784ccd656e12244b0b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
+        <value>http://img1.lostbird.vn/920x-/2018/03/17/99070/921885925bf07d85d723ee267b2b2498.jpg</value>
+        <variable display_value="">7afcd29813899784ccd656e12244b0e2</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>c841ea5c13899784ccd656e12244b0b0</document_key>
+        <order>4</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 21:50:47</sys_created_on>
+        <sys_id>0c41ea5c13899784ccd656e12244b0b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
+        <value>Kitty Purry</value>
+        <variable display_value="">b6fcd29813899784ccd656e12244b0b1</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>c841ea5c13899784ccd656e12244b0b0</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 21:50:47</sys_created_on>
+        <sys_id>4441ea5c13899784ccd656e12244b0b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
+        <value>https://hooks.slack.com/services/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</value>
+        <variable display_value="">d6fcd29813899784ccd656e12244b065</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>c841ea5c13899784ccd656e12244b0b0</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 21:50:47</sys_created_on>
+        <sys_id>8041ea5c13899784ccd656e12244b0b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
+        <value>ROAR</value>
+        <variable display_value="">e6fcd29813899784ccd656e12244b08c</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>c841ea5c13899784ccd656e12244b0b0</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 21:50:47</sys_created_on>
+        <sys_id>cc41ea5c13899784ccd656e12244b0b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
+        <value>#general</value>
+        <variable display_value="">bafcd29813899784ccd656e12244b0bd</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=c841ea5c13899784ccd656e12244b0b0"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_additional_message</field>
+        <id>c841ea5c13899784ccd656e12244b0b0</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 21:50:47</sys_created_on>
+        <sys_id>0441ea5c13899784ccd656e12244b0b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
+        <table>var__m_sys_hub_action_input_dafcd29813899784ccd656e12244b062</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_channel</field>
+        <id>c841ea5c13899784ccd656e12244b0b0</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 21:50:47</sys_created_on>
+        <sys_id>8c41ea5c13899784ccd656e12244b0b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
+        <table>var__m_sys_hub_action_input_dafcd29813899784ccd656e12244b062</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_icon_url</field>
+        <id>c841ea5c13899784ccd656e12244b0b0</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 21:50:47</sys_created_on>
+        <sys_id>8841ea5c13899784ccd656e12244b0b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
+        <table>var__m_sys_hub_action_input_dafcd29813899784ccd656e12244b062</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_task</field>
+        <id>c841ea5c13899784ccd656e12244b0b0</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 21:50:47</sys_created_on>
+        <sys_id>4041ea5c13899784ccd656e12244b0b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
+        <table>var__m_sys_hub_action_input_dafcd29813899784ccd656e12244b062</table>
+        <value>{{Created or Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_username</field>
+        <id>c841ea5c13899784ccd656e12244b0b0</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 21:50:47</sys_created_on>
+        <sys_id>c841ea5c13899784ccd656e12244b0b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
+        <table>var__m_sys_hub_action_input_dafcd29813899784ccd656e12244b062</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ah_webhook_url</field>
+        <id>c841ea5c13899784ccd656e12244b0b0</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 21:50:47</sys_created_on>
+        <sys_id>c441ea5c13899784ccd656e12244b0b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 21:50:47</sys_updated_on>
+        <table>var__m_sys_hub_action_input_dafcd29813899784ccd656e12244b062</table>
+        <value/>
+    </sys_element_mapping>
 </record_update>

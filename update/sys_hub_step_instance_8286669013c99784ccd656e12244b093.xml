@@ -4,6 +4,7 @@
         <action display_value="Post Any Task Details">0586269013c99784ccd656e12244b0a2</action>
         <cid>1831eb92-3d6a-45cb-b980-ff9060bb9345</cid>
         <extended_inputs/>
+        <extended_inputs/>
         <extended_outputs/>
         <icon/>
         <inputs/>
@@ -26,4 +27,62 @@
         <sys_updated_by>aleck.lin</sys_updated_by>
         <sys_updated_on>2018-03-20 22:13:52</sys_updated_on>
     </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=8286669013c99784ccd656e12244b093"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>8286669013c99784ccd656e12244b093</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 22:13:52</sys_created_on>
+        <sys_id>9e86669013c99784ccd656e12244b0a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 22:13:52</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+  if(inputs.status_code != '200'){
+    new SlackErrorHandler().throwException(inputs.status_code,inputs.response);
+  }
+})(inputs, outputs);
+
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=8286669013c99784ccd656e12244b093"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>response</field>
+        <id>8286669013c99784ccd656e12244b093</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 22:13:52</sys_created_on>
+        <sys_id>1a86669013c99784ccd656e12244b0a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 22:13:52</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_8286669013c99784ccd656e12244b093</table>
+        <value>{{step[79a31a17-d01d-416b-81f5-1dc7d5b896ee].response_body}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>8286669013c99784ccd656e12244b093</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 22:13:52</sys_created_on>
+        <sys_id>1e86669013c99784ccd656e12244b0a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 22:13:52</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>status_code</field>
+        <id>8286669013c99784ccd656e12244b093</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 22:13:52</sys_created_on>
+        <sys_id>da86669013c99784ccd656e12244b0a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 22:13:52</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_8286669013c99784ccd656e12244b093</table>
+        <value>{{step[79a31a17-d01d-416b-81f5-1dc7d5b896ee].status_code}}</value>
+    </sys_element_mapping>
 </record_update>

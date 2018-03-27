@@ -4,6 +4,7 @@
         <action display_value="Post Task Details">9b739e5013899784ccd656e12244b0ff</action>
         <cid>56b5056d-10d8-42e9-a68d-a5cdb27bbcb0</cid>
         <extended_inputs/>
+        <extended_inputs/>
         <extended_outputs/>
         <icon/>
         <inputs/>
@@ -26,4 +27,115 @@
         <sys_updated_by>aleck.lin</sys_updated_by>
         <sys_updated_on>2018-03-20 20:50:48</sys_updated_on>
     </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=8d83de5013899784ccd656e12244b0e5"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>8d83de5013899784ccd656e12244b0e5</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 20:50:48</sys_created_on>
+        <sys_id>1183129013899784ccd656e12244b00c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 20:50:48</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+  var defaultFields = 'short_description,category,state,priority,assignment_group,assigned_to';
+  //default fields
+  var fieldsToPost = inputs.fields;
+  if(gs.nil(fieldsToPost))
+    fieldsToPost = defaultFields;
+    
+  var slackUtils = new x_snc_sn_slack_int.MySlackUtils();
+  var payload = slackUtils.createPayload(inputs,fieldsToPost);
+  outputs.payload = JSON.stringify(payload);
+})(inputs, outputs);
+</value>
+        <variable display_value="">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=8d83de5013899784ccd656e12244b0e5"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>channel</field>
+        <id>8d83de5013899784ccd656e12244b0e5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 20:50:48</sys_created_on>
+        <sys_id>5183129013899784ccd656e12244b00d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 20:50:48</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_8d83de5013899784ccd656e12244b0e5</table>
+        <value>{{action.ah_channel}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>fields</field>
+        <id>8d83de5013899784ccd656e12244b0e5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 20:50:48</sys_created_on>
+        <sys_id>d583129013899784ccd656e12244b00d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 20:50:48</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_8d83de5013899784ccd656e12244b0e5</table>
+        <value>{{action.ah_override_default_fields}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>icon</field>
+        <id>8d83de5013899784ccd656e12244b0e5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 20:50:48</sys_created_on>
+        <sys_id>1583129013899784ccd656e12244b00d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 20:50:48</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_8d83de5013899784ccd656e12244b0e5</table>
+        <value>{{action.ah_icon}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>message</field>
+        <id>8d83de5013899784ccd656e12244b0e5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 20:50:48</sys_created_on>
+        <sys_id>9983129013899784ccd656e12244b00d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 20:50:48</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_8d83de5013899784ccd656e12244b0e5</table>
+        <value>{{action.ah_additional_message}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>8d83de5013899784ccd656e12244b0e5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 20:50:48</sys_created_on>
+        <sys_id>9d83129013899784ccd656e12244b00c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 20:50:48</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_8d83de5013899784ccd656e12244b0e5</table>
+        <value>{{action.ah_task}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>8d83de5013899784ccd656e12244b0e5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 20:50:48</sys_created_on>
+        <sys_id>9d83129013899784ccd656e12244b00b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 20:50:48</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>username</field>
+        <id>8d83de5013899784ccd656e12244b0e5</id>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2018-03-20 20:50:48</sys_created_on>
+        <sys_id>5d83129013899784ccd656e12244b00d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-20 20:50:48</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_8d83de5013899784ccd656e12244b0e5</table>
+        <value>{{action.ah_username}}</value>
+    </sys_element_mapping>
 </record_update>
