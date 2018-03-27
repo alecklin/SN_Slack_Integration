@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sys_hub_step_instance">
     <sys_hub_step_instance action="INSERT_OR_UPDATE">
-        <action display_value="Test Slacker Action">d7a91b9e13051b003b3a53b32244b0d6</action>
+        <action/>
         <cid>c0c6316c-4cf8-4a08-85d9-85a58cde04b5</cid>
         <extended_inputs/>
         <extended_outputs/>

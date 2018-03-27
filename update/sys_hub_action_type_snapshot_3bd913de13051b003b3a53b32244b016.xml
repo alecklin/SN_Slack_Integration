@@ -9,7 +9,7 @@
         <name>Test Slacker Action</name>
         <outputs/>
         <outputs/>
-        <parent_action display_value="Test Slacker Action">d7a91b9e13051b003b3a53b32244b0d6</parent_action>
+        <parent_action/>
         <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2018-03-27 07:06:01</sys_created_on>
