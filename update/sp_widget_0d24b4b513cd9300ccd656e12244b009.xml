@@ -19,95 +19,95 @@
 
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>.panel-wrapper {&#13;
-	margin-bottom: 10px;&#13;
-}&#13;
-.panel-proper {&#13;
-	background-color: #fff;&#13;
-	border-radius: 5px;&#13;
-	transition: box-shadow 0.5s;&#13;
-	position: relative;&#13;
-}&#13;
-&#13;
-&#13;
-.preference {&#13;
-  margin:5px;&#13;
-}&#13;
-&#13;
-.preference label {&#13;
-  margin: 0 15px 0 0 ;&#13;
-  min-width: 80px;&#13;
-}&#13;
-&#13;
-.enablePreference{&#13;
-  display:block;&#13;
-  float:left;&#13;
-  margin-right:20px;&#13;
-  position:relative;&#13;
-  top:5px;&#13;
-}&#13;
-&#13;
-/* The switch - the box around the slider */&#13;
-.switch {&#13;
-  position: relative;&#13;
-  display: inline-block;&#13;
-  width: 60px;&#13;
-  height: 34px;&#13;
-}&#13;
-&#13;
-/* Hide default HTML checkbox */&#13;
-.switch input {display:none;}&#13;
-&#13;
-/* The slider */&#13;
-.slider {&#13;
-  position: absolute;&#13;
-  cursor: pointer;&#13;
-  top: 0;&#13;
-  left: 0;&#13;
-  right: 0;&#13;
-  bottom: 0;&#13;
-  background-color: #ccc;&#13;
-  -webkit-transition: .4s;&#13;
-  transition: .4s;&#13;
-}&#13;
-&#13;
-.slider:before {&#13;
-  position: absolute;&#13;
-  content: "";&#13;
-  height: 26px;&#13;
-  width: 26px;&#13;
-  left: 4px;&#13;
-  bottom: 4px;&#13;
-  background-color: white;&#13;
-  -webkit-transition: .4s;&#13;
-  transition: .4s;&#13;
-}&#13;
-&#13;
-input {&#13;
-  width:350px;&#13;
-}&#13;
-&#13;
-input:checked + .slider {&#13;
-  background-color: #2196F3;&#13;
-}&#13;
-&#13;
-input:focus + .slider {&#13;
-  box-shadow: 0 0 1px #2196F3;&#13;
-}&#13;
-&#13;
-input:checked + .slider:before {&#13;
-  -webkit-transform: translateX(26px);&#13;
-  -ms-transform: translateX(26px);&#13;
-  transform: translateX(26px);&#13;
-}&#13;
-&#13;
-/* Rounded sliders */&#13;
-.slider.round {&#13;
-  border-radius: 20px;&#13;
-}&#13;
-&#13;
-.slider.round:before {&#13;
-  border-radius: 50%;&#13;
+        <css>.panel-wrapper {
+	margin-bottom: 10px;
+}
+.panel-proper {
+	background-color: #fff;
+	border-radius: 5px;
+	transition: box-shadow 0.5s;
+	position: relative;
+}
+
+
+.preference {
+  margin:5px;
+}
+
+.preference label {
+  margin: 0 15px 0 0 ;
+  min-width: 140px;
+}
+
+.enablePreference{
+  display:block;
+  float:left;
+  margin-right:20px;
+  position:relative;
+  top:5px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input {
+  width:350px;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -186,7 +186,7 @@ input:checked + .slider:before {&#13;
         <sys_created_on>2018-03-25 05:45:50</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>0d24b4b513cd9300ccd656e12244b009</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Slack Integration Preference</sys_name>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
@@ -194,7 +194,7 @@ input:checked + .slider:before {&#13;
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sp_widget_0d24b4b513cd9300ccd656e12244b009</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-25 05:45:50</sys_updated_on>
+        <sys_updated_on>2018-03-28 05:48:40</sys_updated_on>
         <template><![CDATA[<div class="panel-wrapper" ng-class="{ 'expanded': c.expanded, 'recovered': (c.alert.state === 'Closed') }">
 	<div class="panel-proper">
 
@@ -230,6 +230,18 @@ input:checked + .slider:before {&#13;
         <input ng-model="c.data.channel" ng-value="c.data.prefs.channel">
         <button type="button" ng-click="c.setPreference(c.data.channel, 'channel')"> Save</button>                        
       </div>
+      
+      <div class="preference">
+        <label>Additional Message</label>
+        <input ng-model="c.data.additional_message" ng-value="c.data.prefs.additional_message">
+				<button type="button" ng-click="c.setPreference(c.data.additional_message, 'additional_message')"> Save</button>                        
+      </div>  
+      
+      <div class="preference">
+        <label>Default Fields Override</label>
+        <input ng-model="c.data.fields_override" ng-value="c.data.prefs.fields_override">
+				<button type="button" ng-click="c.setPreference(c.data.fields_override, 'fields_override')"> Save</button>                        
+      </div>        
       
       <div class="preference">
         <label>Icon</label>

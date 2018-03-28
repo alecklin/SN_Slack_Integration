@@ -10,7 +10,7 @@
         <sys_created_on>2018-03-25 06:09:48</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>bcd9b43d13cd9300ccd656e12244b082</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>record_create_or_update</sys_name>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
@@ -18,7 +18,7 @@
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_hub_trigger_instance_bcd9b43d13cd9300ccd656e12244b082</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-28 00:18:41</sys_updated_on>
+        <sys_updated_on>2018-03-28 05:52:40</sys_updated_on>
         <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -61,10 +61,10 @@
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2018-03-25 06:09:48</sys_created_on>
         <sys_id>4dd9b43d13cd9300ccd656e12244b085</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-28 00:18:29</sys_updated_on>
-        <value>severityCHANGESTO1^severityVALCHANGES^state!=Closed^maintenance!=true^acknowledged!=true</value>
+        <sys_updated_on>2018-03-28 05:31:57</sys_updated_on>
+        <value>severityCHANGESTO1^severityVALCHANGES^state!=Closed^maintenance!=true</value>
         <variable display_value="">707dd180c32222002841b63b12d3aecb</variable>
     </sys_variable_value>
 </record_update>

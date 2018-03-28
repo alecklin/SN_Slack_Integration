@@ -30,6 +30,8 @@ SlackUtils.prototype = {
 					return closeAlert();
 				case 'createIncident':
 					return createIncident();
+				case 'maintenance':
+					return maintenanceAlert();					
 				default:
 					error.message = 'Sorry, that was an unsupported action';
 					throw error;
@@ -66,6 +68,15 @@ SlackUtils.prototype = {
 			return responseMessage('opened an incident for the alert');
 		}
 		
+		function maintenanceAlert() {
+			gs.info('maintenanceAlert()');
+			var alertGr = new GlideRecord('em_alert');
+			alertGr.get(sysId);
+			alertGr.maintenance = true;
+			alertGr.update();
+			return responseMessage('Alert is put in maintenance');
+		}		
+		
 		function responseMessage(verboseAction) {
 			var originalMessage = message.original_message;
 			gs.info('trimButtons(message): ' + new global.JSON().encode(message));
@@ -95,38 +106,101 @@ SlackUtils.prototype = {
 	createAlertPayload : function(inputs, defaultFields) {
 		var payload = this.createPayload(inputs, defaultFields);
 		
+		var alertId = inputs.record.sys_id;
+		var actions = this._getActions(alertId);
+		
+		if (actions.length == 0)
+			return payload;
+		
 		payload.attachments.push({
 			title: 'What do you want to do?',
 			fallback: 'What do you want to do?',
-			callback_id: 'em_alert#' + inputs.record.sys_id,
+			callback_id: 'em_alert#' + alertId,
 			color: 'warning',
 			attachment_type: 'default',
-			actions: [
-				{
-					name: 'acknowledge',
-					text: 'Acknowledge',
-					value: 'acknowledge',
-					style: 'primary',
-					type: 'button'
-				},
-				{
-					name: 'close',
-					text: 'Close',
-					value: 'close',
-					type: 'button'
-				},
-				{
-					name: 'createIncident',
-					text: 'Create Incident',
-					value: 'createIncident',
-					style: 'danger',
-					type: 'button'
-				}
-			]
+			actions: actions
 		});
 		
 		return payload;
 	},
+	
+	_getActions : function(alertId) {				
+		var alertGr = new GlideRecord("em_alert");
+		alertGr.get(alertId);
+		
+		var actions = [];
+		
+		var action = getAckAction(alertGr);
+		if (!gs.nil(action))
+			actions.push(action);
+
+		action = getCloseAction(alertGr);
+		if (!gs.nil(action))
+			actions.push(action);		
+		
+		action = getMaintenanceAction(alertGr);
+		if (!gs.nil(action))
+			actions.push(action);			
+		
+		action = getincidentCreationAction(alertGr);
+		if (!gs.nil(action))
+			actions.push(action);			
+		
+		return actions;
+		
+		function getAckAction(alertGr) {
+			if (alertGr.acknowledged == true)
+				return;
+			
+			return {
+						name: 'acknowledge',
+						text: 'Acknowledge',
+						value: 'acknowledge',
+						style: 'primary',
+						type: 'button'
+					};
+		}
+		
+		function getCloseAction(alertGr) {
+			if (alertGr.state == "Closed")
+				return;
+			
+			return {
+						name: 'close',
+						text: 'Close',
+						value: 'close',
+						type: 'button'
+					};
+		}	
+		
+		function getMaintenanceAction(alertGr) {
+			if (alertGr.maintenance == true)
+				return;
+			
+			return {
+						name: 'maintenance',
+						text: 'Maintenance',
+						value: 'maintenance',
+						style: 'primary',
+						type: 'button'
+					};
+		}		
+		
+		function getincidentCreationAction(alertGr) {
+			if (!gs.nil(alertGr.incident))
+				return;
+			
+			return {
+						name: 'createIncident',
+						text: 'Create Incident',
+						value: 'createIncident',
+						style: 'danger',
+						type: 'button'
+					};
+		}		
+		
+	},
+	
 	
 	createPayload : function(inputs, defaultFields) {
 		var payload = {};
@@ -152,8 +226,8 @@ SlackUtils.prototype = {
 		
 		fieldsToSend.forEach(function (fieldName) {
 			fieldName = fieldName.trim();
-			
-			var fieldValue = inputs.record.getDisplayValue(fieldName) || '';
+	
+			var fieldValue = inputs.record.getDisplayValue(fieldName) || '';			
 			var isShort = (fieldValue.length > 30 || fieldName == 'short_description') ? false : true;
 			
 			if (!gs.nil(fieldValue)){
@@ -188,14 +262,14 @@ SlackUtils.prototype = {
         <sys_created_on>2018-03-20 18:15:39</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>b400791413099784ccd656e12244b082</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name>SlackUtils</sys_name>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_script_include_b400791413099784ccd656e12244b082</sys_update_name>
-        <sys_updated_by>ben.yukich</sys_updated_by>
-        <sys_updated_on>2018-03-21 04:06:13</sys_updated_on>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2018-03-28 06:45:22</sys_updated_on>
     </sys_script_include>
 </record_update>
