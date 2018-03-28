@@ -15,7 +15,7 @@
         <sys_created_on>2018-03-25 06:09:48</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c9d93c3d13cd9300ccd656e12244b03d</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name/>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
@@ -23,7 +23,7 @@
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_hub_action_instance_c9d93c3d13cd9300ccd656e12244b03d</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-28 05:52:40</sys_updated_on>
+        <sys_updated_on>2018-03-28 20:19:20</sys_updated_on>
         <ui_id>0815c588-cfb0-4f51-9ce6-79a323d7d5be</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=c9d93c3d13cd9300ccd656e12244b03d"/>
