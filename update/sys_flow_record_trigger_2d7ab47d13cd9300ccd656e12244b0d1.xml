@@ -2,9 +2,11 @@
 <record_update table="sys_flow_record_trigger">
     <sys_flow_record_trigger action="INSERT_OR_UPDATE">
         <active>true</active>
-        <condition table="em_alert">severity=1^severityVALCHANGES^state!=Closed<item endquery="false" field="severity" goto="false" newquery="false" operator="=" or="false" value="1"/>
+        <condition table="em_alert">severityCHANGESTO1^severityVALCHANGES^state!=Closed^maintenance!=true^acknowledged!=true<item endquery="false" field="severity" goto="false" newquery="false" operator="CHANGESTO" or="false" value="1"/>
             <item endquery="false" field="severity" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
             <item endquery="false" field="state" goto="false" newquery="false" operator="!=" or="false" value="Closed"/>
+            <item endquery="false" field="maintenance" goto="false" newquery="false" operator="!=" or="false" value="true"/>
+            <item endquery="false" field="acknowledged" goto="false" newquery="false" operator="!=" or="false" value="true"/>
         </condition>
         <name/>
         <on_delete>false</on_delete>
@@ -15,7 +17,7 @@
         <sys_created_on>2018-03-25 06:12:34</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>2d7ab47d13cd9300ccd656e12244b0d1</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name/>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
@@ -23,7 +25,7 @@
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_flow_record_trigger_2d7ab47d13cd9300ccd656e12244b0d1</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
-        <sys_updated_on>2018-03-27 05:52:50</sys_updated_on>
+        <sys_updated_on>2018-03-28 00:18:42</sys_updated_on>
         <table>em_alert</table>
     </sys_flow_record_trigger>
 </record_update>
