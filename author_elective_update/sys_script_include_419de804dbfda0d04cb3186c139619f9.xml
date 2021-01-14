@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_sn_slack_int.SlackUtils_v2</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>A clone of the SlackUtil class from the OOB Slack app. Adding additional enhancements to it...</description>
+        <name>SlackUtils_v2</name>
+        <script><![CDATA[var SlackUtils_v2 = Class.create();
+SlackUtils_v2.prototype = {
+	initialize: function() {},
+
+	htmlEscape: function(str) {
+		return str
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;');
+	},
+
+	createAlertPayload: function(inputs, defaultFields) {
+		var payload = {};
+		payload.text = this.htmlEscape(inputs.message);
+
+		if (!gs.nil(inputs.channel.trim()))
+			payload.channel = inputs.channel.trim();
+
+		if (!gs.nil(inputs.icon.trim()))
+			payload.icon_emoji = inputs.icon.trim();
+
+		if (!gs.nil(inputs.username.trim()))
+			payload.username = inputs.username.trim();
+
+		payload.attachments = [];
+
+		var fields = [];
+		var fieldsToSend = defaultFields.split(',');
+		var _this = this;
+
+		fieldsToSend.forEach(function(fieldName) {
+			fieldName = fieldName.trim();
+			var fieldValue = '';
+			var isShort = true;
+			var fieldLabel = '';
+			if (fieldName.indexOf('.') >= 0) {
+				var childFields = fieldName.split('.');
+				var childValue = inputs.record;
+				var childlabel = '';
+				childFields.forEach(function(property) {
+					if (property == childFields[childFields.length - 1]) {
+						childlabel += property.charAt(0).toUpperCase() + property.slice(1).replace(/_/g, ' ');
+					} else {
+						childlabel += property.charAt(0).toUpperCase() + property.slice(1).replace(/_/g, ' ') + '>';
+					}
+					childValue = childValue[property];
+				});
+				fieldValue = childValue;
+				isShort = (fieldValue.length > 30 || fieldName == 'short_description') ? false : true;
+				fieldLabel = childlabel;
+			} else {
+				fieldValue = inputs.record.getDisplayValue(fieldName) || '';
+				isShort = (fieldValue.length > 30 || fieldName == 'short_description') ? false : true;
+				fieldLabel = inputs.record[fieldName].getLabel();
+			}
+			if (!gs.nil(fieldValue)) {
+				fieldValue = _this.htmlEscape(fieldValue);
+				fields.push({
+					"title": fieldLabel,
+					"value": fieldValue,
+					"short": isShort
+				});
+			}
+		});
+
+		var incidentNumber = inputs.record.getDisplayValue('number');
+		var recordLink = inputs.record.getLink();
+		var incidentLink = gs.getProperty('glide.servlet.uri') + recordLink;
+		var incidentUrl = '<' + incidentLink + '|' + incidentNumber + '>';
+		payload.attachments.push({
+			text: incidentUrl,
+			fallback: inputs.message,
+			fields: fields
+		});
+		return payload;
+	},
+
+	processFieldValues: function(recordGlideObject, fieldsList) {
+		var fields = [];
+		var fieldsToSend = fieldsList.split(',');
+		var _this = this;
+		fieldsToSend.forEach(function(fieldName) {
+			fieldName = fieldName.trim();
+			var fieldValue = '';
+			var fieldLabel = '';
+			if (fieldName.indexOf('.') >= 0) {
+				var childFields = fieldName.split('.');
+				var childValue = recordGlideObject;
+				var childlabel = '';
+				childFields.forEach(function(property) {
+					if (property == childFields[childFields.length - 1]) {
+						childlabel += property.charAt(0).toUpperCase() + property.slice(1).replace(/_/g, ' ');
+					} else {
+						childlabel += property.charAt(0).toUpperCase() + property.slice(1).replace(/_/g, ' ') + '>';
+					}
+					childValue = childValue[property];
+				});
+				fieldValue = childValue;
+				fieldLabel = childlabel;
+			} else {
+				fieldValue = recordGlideObject.getDisplayValue(fieldName) || '';
+				fieldLabel = recordGlideObject[fieldName].getLabel();
+			}
+			if (!gs.nil(fieldValue)) {
+				fieldValue = _this.htmlEscape(fieldValue);
+				fields.push({
+					"type": "mrkdwn",
+					"text": '*' + fieldLabel + ':*' + '\n' + fieldValue
+				});
+			}
+		});
+		return fields;
+	},
+
+	buttonsconfig: function(record, buttons) {
+		var arrayUtil = new global.ArrayUtil();
+		var buttonStyles = ['primary', 'danger'];
+		var elements = [];
+		var buttonConfig = buttons;
+		buttonConfig.forEach(function(property) {
+			var element = {};
+			if (property.style) {
+				if (!arrayUtil.contains(buttonStyles, property.style)) {
+					throw new Error('Button style is invalid, it can be either primary or danger');
+				}
+				element = {
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"emoji": true,
+						"text": property.name
+					},
+					"style": property.style,
+					"value": record
+				};
+			} else {
+				element = {
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"emoji": true,
+						"text": property.name
+					},
+					"value": record
+				};
+			}
+			elements.push(element);
+		});
+		return elements;
+	},
+
+	choiceConfig:function(choiceValues){
+		var options =[];
+		choiceValues.forEach(function(property){
+			options.push({
+				"text": {
+					"type": "plain_text",
+					"text": (property.label).trim(),
+					"emoji": true
+				},
+				"value": (property.value).trim()
+			});
+		});
+		var choicePayload = {
+			"type": "static_select",
+			"placeholder": {
+				"type": "plain_text",
+				"text": "Select an item",
+				"emoji": true
+			},
+			"options": options
+		};
+		return choicePayload;
+	},
+
+	createBlocksPayload: function(inputs, title, fields, buttonElements, actionId) {
+
+		var payload = {};
+		payload.blocks = [];
+		payload.text = this.htmlEscape(inputs.message);
+
+		if (!gs.nil(inputs.channel.trim()))
+			payload.channel = inputs.channel.trim();
+
+		if (!gs.nil(inputs.icon.trim()))
+			payload.icon_emoji = inputs.icon.trim();
+
+		if (!gs.nil(inputs.username.trim()))
+			payload.username = inputs.username.trim();
+
+		payload.blocks.push({
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": title
+			}
+		});
+		if (fields) {
+			payload.blocks.push({
+				"type": "section",
+				"fields": fields
+			});
+		}
+		payload.blocks.push({
+			"type": "actions",
+			"block_id": actionId,
+			"elements": buttonElements
+		});
+		return payload;
+	},
+
+	createApprovalPayload: function(inputs) {
+
+		var template = inputs.template;
+		var payloadFields = [];
+		var buttonsConfig = [];
+		var payload = {};
+		var title = (template.message_title).getDisplayValue();
+		var recordNumber = inputs.record.getDisplayValue('number');
+		var recordLink = gs.getProperty('glide.servlet.uri') + inputs.record.getLink();
+		var recordUrl = '<' + recordLink + '|' + recordNumber + '>';
+		title = title.replace('{0}',recordUrl);
+		if (template.fields) {
+			var messagesFields = template.fields.split(',');
+			messagesFields.forEach(function(property) {
+				payloadFields.push(property);
+			});
+			var fields = this.processFieldValues(inputs.record, payloadFields.toString());
+		}
+		for (var property in template.buttons) {
+			buttonsConfig.push({
+				name: property,
+				style: template.buttons[property],
+			});
+		}
+		var blockId = JSON.stringify({
+			'actionId': template.action_id.toString()
+		});
+		var actionId = blockId;
+		var buttonElements = this.buttonsconfig(inputs.approval_record.sys_id.toString(), buttonsConfig);
+		payload = this.createBlocksPayload(inputs, title, fields, buttonElements, actionId);
+		return payload;
+	},
+
+	createButtonsPayload: function(inputs) {
+
+		var template = inputs.template;
+		var payload = {};
+		var payloadFields = [];
+		var buttonsConfig = [];
+		var inputRecord = new GlideRecord(template.target_table);
+		if (inputRecord.get(inputs.record)) {
+			var title = (template.message_title).getDisplayValue();
+			var recordNumber = inputRecord.getDisplayValue('number');
+			var recordLink = gs.getProperty('glide.servlet.uri') + inputRecord.getLink();
+			var recordUrl = '<' + recordLink + '|' + recordNumber + '>';
+			title = title.replace('{0}',recordUrl);
+			if (template.fields) {
+				var messagesFields = template.fields.split(',');
+				messagesFields.forEach(function(property) {
+					payloadFields.push(property);
+				}); 
+				var fields = this.processFieldValues(inputRecord, payloadFields.toString());
+			}
+			for (var property in template.buttons) {
+				buttonsConfig.push({
+					name: property,
+					style: template.buttons[property],
+				});
+			}
+			var buttonElements = this.buttonsconfig(inputs.record, buttonsConfig);
+			var choices = template.choice_list;
+			if(choices){
+				var choiceValues = [];
+				var choiceOptions = choices.split(',');
+				choiceOptions.forEach(function(sysID){
+					var choiceRecord = new GlideRecord('sn_slack_ah_v2_slack_outbound_choices');
+					choiceRecord.get(sysID);
+					choiceValues.push({
+						'label':''+choiceRecord.name,
+						'value':''+choiceRecord.value
+					});
+				});
+				var choicePayload = this.choiceConfig(choiceValues);
+				buttonElements.push(choicePayload);
+			}
+			var blockId = JSON.stringify({
+				'actionId': template.action_id.toString(),
+				'contextId': inputs.contextId
+			});
+			var actionId = blockId;
+			payload = this.createBlocksPayload(inputs, title, fields, buttonElements, actionId);
+			return payload;
+		} else {
+			throw new Error('Invalid Record sys_id');
+		}
+
+	},
+
+	postMessageError: function(error) {
+		var output;
+		switch (error) {
+			case "channel_not_found":
+				output = "Invalid Channel ID";
+				break;
+			case "user_not_found":
+			case "users_not_found":
+				output = "User Not Found";
+				break;
+			case "msg_too_long":
+				output = "Message Text Too Long";
+				break;
+			case "no_text":
+				output = "Message Text is Missing";
+				break;
+			case "not_authed":
+			case "not_in_channel":
+			case "restricted_action":
+			case "is_archived":
+			case "restricted_action_read_only_channel":
+			case "restricted_action_thread_only_channel":
+			case "rate_limited":
+				output = "Unauthorized. Please Check Oauth Token.";
+				break;
+			case "invalid_auth":
+			case "account_inactive":
+			case "token_revoked":
+				output = "Insufficient Permissions. Please check OAuth token and scope permission";
+				break;
+			case "no_permission":
+			case "user_is_restricted":
+			case "user_is_bot":
+				output = "Forbidden Request. Please check OAuth token and scope permission";
+				break;
+			case "invalid_arg_name":
+			case "invalid_array_arg":
+			case "invalid_charset":
+			case "invalid_form_data":
+			case "invalid_post_type":
+			case "missing_post_type":
+				output = "Invalid Connection";
+				break;
+			default:
+				output = "Unknown Error";
+				break;
+
+		}
+		return output;
+	},
+
+	scimError: function(error) {
+		var output;
+		switch (error) {
+			case "no_such_group":
+				output = "Group Not Found";
+				break;
+			case "user_not_found":
+			case "no_such_user":
+			case "username_required":
+			case "invalid_username":
+				output = "User Name is Invalid or Missing";
+				break;
+			case "unknown_user":
+				output = "User Not Found";
+				break;
+			case "username_taken":
+				output = "Username Already Exists";
+				break;
+			case "username_too_long":
+				output = "User Name Too Long";
+				break;
+			case "bad_email_address":
+				output = "User's Email is Invalid or Already Taken";
+				break;
+			case "invalid_display_name":
+			case "invalid_name_specials":
+				output = "Display Name is Invalid or Missing";
+				break;
+			case "cannot_disable_bot_user_with_scim":
+			case "cannot_disable_primary_owner":
+			case "cannot_modify_owner":
+				output = "Insufficient Permissions. Please check OAuth token and scope permission";
+				break;
+			case "non_org_teams_only":
+			case "plus_teams_only":
+			case "too_many_requests":
+			case "missing_authentication":
+				output = "Forbidden Request. Please check OAuth token and scope permission";
+				break;
+			case "bad_endpoint":
+			case "invalid_query":
+				output = "Invalid Connection";
+				break;
+			default:
+				output = "Unknown Error";
+				break;
+
+		}
+		return output;
+	},
+
+	type: 'SlackUtils_v2'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-01-14 06:29:47</sys_created_on>
+        <sys_id>419de804dbfda0d04cb3186c139619f9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>SlackUtils_v2</sys_name>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_update_name>sys_script_include_419de804dbfda0d04cb3186c139619f9</sys_update_name>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-01-14 06:33:44</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</application>
+        <file_path/>
+        <instance_id>0f35947adb4028547527d7c8f49619ec</instance_id>
+        <instance_name>kpparis2demo</instance_name>
+        <name>sys_script_include_419de804dbfda0d04cb3186c139619f9</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_snc_sn_slack_int.SlackUtils_v2&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description&gt;A clone of the SlackUtil class from the OOB Slack app. Adding additional enhancements to it...&lt;/description&gt;&lt;name&gt;SlackUtils_v2&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var SlackUtils_v2 = Class.create();
+SlackUtils_v2.prototype = {
+	initialize: function() {},
+
+	htmlEscape: function(str) {
+		return str
+			.replace(/&amp;/g, '&amp;amp;')
+			.replace(/&lt;/g, '&amp;lt;')
+			.replace(/&gt;/g, '&amp;gt;');
+	},
+
+	createAlertPayload: function(inputs, defaultFields) {
+		var payload = {};
+		payload.text = this.htmlEscape(inputs.message);
+
+		if (!gs.nil(inputs.channel.trim()))
+			payload.channel = inputs.channel.trim();
+
+		if (!gs.nil(inputs.icon.trim()))
+			payload.icon_emoji = inputs.icon.trim();
+
+		if (!gs.nil(inputs.username.trim()))
+			payload.username = inputs.username.trim();
+
+		payload.attachments = [];
+
+		var fields = [];
+		var fieldsToSend = defaultFields.split(',');
+		var _this = this;
+
+		fieldsToSend.forEach(function(fieldName) {
+			fieldName = fieldName.trim();
+			var fieldValue = '';
+			var isShort = true;
+			var fieldLabel = '';
+			if (fieldName.indexOf('.') &gt;= 0) {
+				var childFields = fieldName.split('.');
+				var childValue = inputs.record;
+				var childlabel = '';
+				childFields.forEach(function(property) {
+					if (property == childFields[childFields.length - 1]) {
+						childlabel += property.charAt(0).toUpperCase() + property.slice(1).replace(/_/g, ' ');
+					} else {
+						childlabel += property.charAt(0).toUpperCase() + property.slice(1).replace(/_/g, ' ') + '&gt;';
+					}
+					childValue = childValue[property];
+				});
+				fieldValue = childValue;
+				isShort = (fieldValue.length &gt; 30 || fieldName == 'short_description') ? false : true;
+				fieldLabel = childlabel;
+			} else {
+				fieldValue = inputs.record.getDisplayValue(fieldName) || '';
+				isShort = (fieldValue.length &gt; 30 || fieldName == 'short_description') ? false : true;
+				fieldLabel = inputs.record[fieldName].getLabel();
+			}
+			if (!gs.nil(fieldValue)) {
+				fieldValue = _this.htmlEscape(fieldValue);
+				fields.push({
+					"title": fieldLabel,
+					"value": fieldValue,
+					"short": isShort
+				});
+			}
+		});
+
+		var incidentNumber = inputs.record.getDisplayValue('number');
+		var recordLink = inputs.record.getLink();
+		var incidentLink = gs.getProperty('glide.servlet.uri') + recordLink;
+		var incidentUrl = '&lt;' + incidentLink + '|' + incidentNumber + '&gt;';
+		payload.attachments.push({
+			text: incidentUrl,
+			fallback: inputs.message,
+			fields: fields
+		});
+		return payload;
+	},
+
+	processFieldValues: function(recordGlideObject, fieldsList) {
+		var fields = [];
+		var fieldsToSend = fieldsList.split(',');
+		var _this = this;
+		fieldsToSend.forEach(function(fieldName) {
+			fieldName = fieldName.trim();
+			var fieldValue = '';
+			var fieldLabel = '';
+			if (fieldName.indexOf('.') &gt;= 0) {
+				var childFields = fieldName.split('.');
+				var childValue = recordGlideObject;
+				var childlabel = '';
+				childFields.forEach(function(property) {
+					if (property == childFields[childFields.length - 1]) {
+						childlabel += property.charAt(0).toUpperCase() + property.slice(1).replace(/_/g, ' ');
+					} else {
+						childlabel += property.charAt(0).toUpperCase() + property.slice(1).replace(/_/g, ' ') + '&gt;';
+					}
+					childValue = childValue[property];
+				});
+				fieldValue = childValue;
+				fieldLabel = childlabel;
+			} else {
+				fieldValue = recordGlideObject.getDisplayValue(fieldName) || '';
+				fieldLabel = recordGlideObject[fieldName].getLabel();
+			}
+			if (!gs.nil(fieldValue)) {
+				fieldValue = _this.htmlEscape(fieldValue);
+				fields.push({
+					"type": "mrkdwn",
+					"text": '*' + fieldLabel + ':*' + '\n' + fieldValue
+				});
+			}
+		});
+		return fields;
+	},
+
+	buttonsconfig: function(record, buttons) {
+		var arrayUtil = new global.ArrayUtil();
+		var buttonStyles = ['primary', 'danger'];
+		var elements = [];
+		var buttonConfig = buttons;
+		buttonConfig.forEach(function(property) {
+			var element = {};
+			if (property.style) {
+				if (!arrayUtil.contains(buttonStyles, property.style)) {
+					throw new Error('Button style is invalid, it can be either primary or danger');
+				}
+				element = {
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"emoji": true,
+						"text": property.name
+					},
+					"style": property.style,
+					"value": record
+				};
+			} else {
+				element = {
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"emoji": true,
+						"text": property.name
+					},
+					"value": record
+				};
+			}
+			elements.push(element);
+		});
+		return elements;
+	},
+
+	choiceConfig:function(choiceValues){
+		var options =[];
+		choiceValues.forEach(function(property){
+			options.push({
+				"text": {
+					"type": "plain_text",
+					"text": (property.label).trim(),
+					"emoji": true
+				},
+				"value": (property.value).trim()
+			});
+		});
+		var choicePayload = {
+			"type": "static_select",
+			"placeholder": {
+				"type": "plain_text",
+				"text": "Select an item",
+				"emoji": true
+			},
+			"options": options
+		};
+		return choicePayload;
+	},
+
+	createBlocksPayload: function(inputs, title, fields, buttonElements, actionId) {
+
+		var payload = {};
+		payload.blocks = [];
+		payload.text = this.htmlEscape(inputs.message);
+
+		if (!gs.nil(inputs.channel.trim()))
+			payload.channel = inputs.channel.trim();
+
+		if (!gs.nil(inputs.icon.trim()))
+			payload.icon_emoji = inputs.icon.trim();
+
+		if (!gs.nil(inputs.username.trim()))
+			payload.username = inputs.username.trim();
+
+		payload.blocks.push({
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": title
+			}
+		});
+		if (fields) {
+			payload.blocks.push({
+				"type": "section",
+				"fields": fields
+			});
+		}
+		payload.blocks.push({
+			"type": "actions",
+			"block_id": actionId,
+			"elements": buttonElements
+		});
+		return payload;
+	},
+
+	createApprovalPayload: function(inputs) {
+
+		var template = inputs.template;
+		var payloadFields = [];
+		var buttonsConfig = [];
+		var payload = {};
+		var title = (template.message_title).getDisplayValue();
+		var recordNumber = inputs.record.getDisplayValue('number');
+		var recordLink = gs.getProperty('glide.servlet.uri') + inputs.record.getLink();
+		var recordUrl = '&lt;' + recordLink + '|' + recordNumber + '&gt;';
+		title = title.replace('{0}',recordUrl);
+		if (template.fields) {
+			var messagesFields = template.fields.split(',');
+			messagesFields.forEach(function(property) {
+				payloadFields.push(property);
+			});
+			var fields = this.processFieldValues(inputs.record, payloadFields.toString());
+		}
+		for (var property in template.buttons) {
+			buttonsConfig.push({
+				name: property,
+				style: template.buttons[property],
+			});
+		}
+		var blockId = JSON.stringify({
+			'actionId': template.action_id.toString()
+		});
+		var actionId = blockId;
+		var buttonElements = this.buttonsconfig(inputs.approval_record.sys_id.toString(), buttonsConfig);
+		payload = this.createBlocksPayload(inputs, title, fields, buttonElements, actionId);
+		return payload;
+	},
+
+	createButtonsPayload: function(inputs) {
+
+		var template = inputs.template;
+		var payload = {};
+		var payloadFields = [];
+		var buttonsConfig = [];
+		var inputRecord = new GlideRecord(template.target_table);
+		if (inputRecord.get(inputs.record)) {
+			var title = (template.message_title).getDisplayValue();
+			var recordNumber = inputRecord.getDisplayValue('number');
+			var recordLink = gs.getProperty('glide.servlet.uri') + inputRecord.getLink();
+			var recordUrl = '&lt;' + recordLink + '|' + recordNumber + '&gt;';
+			title = title.replace('{0}',recordUrl);
+			if (template.fields) {
+				var messagesFields = template.fields.split(',');
+				messagesFields.forEach(function(property) {
+					payloadFields.push(property);
+				}); 
+				var fields = this.processFieldValues(inputRecord, payloadFields.toString());
+			}
+			for (var property in template.buttons) {
+				buttonsConfig.push({
+					name: property,
+					style: template.buttons[property],
+				});
+			}
+			var buttonElements = this.buttonsconfig(inputs.record, buttonsConfig);
+			var choices = template.choice_list;
+			if(choices){
+				var choiceValues = [];
+				var choiceOptions = choices.split(',');
+				choiceOptions.forEach(function(sysID){
+					var choiceRecord = new GlideRecord('sn_slack_ah_v2_slack_outbound_choices');
+					choiceRecord.get(sysID);
+					choiceValues.push({
+						'label':''+choiceRecord.name,
+						'value':''+choiceRecord.value
+					});
+				});
+				var choicePayload = this.choiceConfig(choiceValues);
+				buttonElements.push(choicePayload);
+			}
+			var blockId = JSON.stringify({
+				'actionId': template.action_id.toString(),
+				'contextId': inputs.contextId
+			});
+			var actionId = blockId;
+			payload = this.createBlocksPayload(inputs, title, fields, buttonElements, actionId);
+			return payload;
+		} else {
+			throw new Error('Invalid Record sys_id');
+		}
+
+	},
+
+	postMessageError: function(error) {
+		var output;
+		switch (error) {
+			case "channel_not_found":
+				output = "Invalid Channel ID";
+				break;
+			case "user_not_found":
+			case "users_not_found":
+				output = "User Not Found";
+				break;
+			case "msg_too_long":
+				output = "Message Text Too Long";
+				break;
+			case "no_text":
+				output = "Message Text is Missing";
+				break;
+			case "not_authed":
+			case "not_in_channel":
+			case "restricted_action":
+			case "is_archived":
+			case "restricted_action_read_only_channel":
+			case "restricted_action_thread_only_channel":
+			case "rate_limited":
+				output = "Unauthorized. Please Check Oauth Token.";
+				break;
+			case "invalid_auth":
+			case "account_inactive":
+			case "token_revoked":
+				output = "Insufficient Permissions. Please check OAuth token and scope permission";
+				break;
+			case "no_permission":
+			case "user_is_restricted":
+			case "user_is_bot":
+				output = "Forbidden Request. Please check OAuth token and scope permission";
+				break;
+			case "invalid_arg_name":
+			case "invalid_array_arg":
+			case "invalid_charset":
+			case "invalid_form_data":
+			case "invalid_post_type":
+			case "missing_post_type":
+				output = "Invalid Connection";
+				break;
+			default:
+				output = "Unknown Error";
+				break;
+
+		}
+		return output;
+	},
+
+	scimError: function(error) {
+		var output;
+		switch (error) {
+			case "no_such_group":
+				output = "Group Not Found";
+				break;
+			case "user_not_found":
+			case "no_such_user":
+			case "username_required":
+			case "invalid_username":
+				output = "User Name is Invalid or Missing";
+				break;
+			case "unknown_user":
+				output = "User Not Found";
+				break;
+			case "username_taken":
+				output = "Username Already Exists";
+				break;
+			case "username_too_long":
+				output = "User Name Too Long";
+				break;
+			case "bad_email_address":
+				output = "User's Email is Invalid or Already Taken";
+				break;
+			case "invalid_display_name":
+			case "invalid_name_specials":
+				output = "Display Name is Invalid or Missing";
+				break;
+			case "cannot_disable_bot_user_with_scim":
+			case "cannot_disable_primary_owner":
+			case "cannot_modify_owner":
+				output = "Insufficient Permissions. Please check OAuth token and scope permission";
+				break;
+			case "non_org_teams_only":
+			case "plus_teams_only":
+			case "too_many_requests":
+			case "missing_authentication":
+				output = "Forbidden Request. Please check OAuth token and scope permission";
+				break;
+			case "bad_endpoint":
+			case "invalid_query":
+				output = "Invalid Connection";
+				break;
+			default:
+				output = "Unknown Error";
+				break;
+
+		}
+		return output;
+	},
+
+	type: 'SlackUtils_v2'
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;aleck.lin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-01-14 06:29:47&lt;/sys_created_on&gt;&lt;sys_id&gt;419de804dbfda0d04cb3186c139619f9&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;SlackUtils_v2&lt;/sys_name&gt;&lt;sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int"&gt;019fa11413099784ccd656e12244b09b&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="SN_Slack_Integration"&gt;019fa11413099784ccd656e12244b09b&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_419de804dbfda0d04cb3186c139619f9&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;aleck.lin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-01-14 06:33:44&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-988011201</payload_hash>
+        <record_name>SlackUtils_v2</record_name>
+        <reverted_from/>
+        <source>ff6a8b3fdb65a0d04cb3186c13961991</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-01-14 06:33:44</sys_created_on>
+        <sys_id>cb7e2084dbfda0d04cb3186c139619ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>176ff9996f40000001</sys_recorded_at>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-01-14 06:33:44</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>c37e2084b6fda0d0a1a4ff9f546aeace</update_guid>
+        <update_guid_history>c37e2084b6fda0d0a1a4ff9f546aeace:-988011201,8dbd2c04edfda0d083b2a0d7c137968c:1753268701,899de804c2fda0d03016048c5cd3b7fc:-1597639443</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>aleck.lin</sys_created_by>
+        <sys_created_on>2021-01-14 22:14:28</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>4aecf3eee06948e1909f7bafc96697a9</sys_id>
+        <sys_metadata>419de804dbfda0d04cb3186c139619f9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SlackUtils_v2</sys_name>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
+        <sys_scope_delete display_value="">0270d693a4ea479b9f9b897779d09831</sys_scope_delete>
+        <sys_update_name>sys_script_include_419de804dbfda0d04cb3186c139619f9</sys_update_name>
+        <sys_update_version display_value="sys_script_include_419de804dbfda0d04cb3186c139619f9">cb7e2084dbfda0d04cb3186c139619ce</sys_update_version>
+        <sys_updated_by>aleck.lin</sys_updated_by>
+        <sys_updated_on>2021-01-14 22:14:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

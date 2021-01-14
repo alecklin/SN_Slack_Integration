@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
-    <element label="Preference" max_length="40" name="x_snc_sn_slack_int_preference" type="collection">
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Preference" max_length="40" name="x_snc_sn_slack_int_preference" sizeclass="3" type="collection">
         <element label="Name" max_length="40" name="name" type="string"/>
         <element label="Value" max_length="255" name="value" type="string"/>
     </element>

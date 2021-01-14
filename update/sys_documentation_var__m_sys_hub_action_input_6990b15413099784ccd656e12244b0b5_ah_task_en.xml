@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_documentation element="ah_task" label="Task" language="en" table="var__m_sys_hub_action_input_6990b15413099784ccd656e12244b0b5">
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>ah_task</element>
@@ -12,13 +11,11 @@
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>aleck.lin</sys_created_by>
             <sys_created_on>2018-03-20 20:33:50</sys_created_on>
-            <sys_customer_update>false</sys_customer_update>
             <sys_id>f4af069c13499784ccd656e12244b0ad</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>Task</sys_name>
             <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
             <sys_policy/>
-            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
             <sys_update_name>sys_documentation_var__m_sys_hub_action_input_6990b15413099784ccd656e12244b0b5_ah_task_en</sys_update_name>
             <sys_updated_by>aleck.lin</sys_updated_by>

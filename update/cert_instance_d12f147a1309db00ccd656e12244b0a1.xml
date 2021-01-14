@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="cert_instance">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="cert_instance">
     <cert_instance action="INSERT_OR_UPDATE">
         <active>true</active>
         <assign_to>it_application_owner</assign_to>
@@ -7,17 +6,19 @@
         <assign_to_group/>
         <assignment_type>User Field</assignment_type>
         <audit_type>data_cert</audit_type>
+        <business_calendar/>
         <cert_audit_instance/>
         <cert_condition/>
-        <cert_schedule display_value="Business Application Certification Quarterly">b0755e23c7723200d20ee48bca9763a7</cert_schedule>
+        <cert_schedule display_value="">b0755e23c7723200d20ee48bca9763a7</cert_schedule>
         <complete_by>2018-04-07 06:47:09</complete_by>
         <completed/>
         <condition/>
         <conditional>false</conditional>
         <create_tasks>false</create_tasks>
         <display_fields>name,application_type</display_fields>
+        <entered_time/>
         <fields>business_criticality,data_classification,contract_end_date,active,active_user_count,install_status,user_base,last_change_date,it_application_owner,owned_by</fields>
-        <filter display_value="Business Application Certification Filter - 1">b5a31f553b323200d20ee79c83efc465</filter>
+        <filter display_value="">b5a31f553b323200d20ee79c83efc465</filter>
         <group/>
         <health_window>7</health_window>
         <health_window_unit>days</health_window_unit>
@@ -27,9 +28,11 @@
         <name>Business Application Certification Quarterly</name>
         <next_scheduled_run/>
         <number>CRTINST0010001</number>
+        <offset/>
+        <offset_type/>
         <percent_complete>0</percent_complete>
         <prev_last_run_date/>
-        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as display_value="Karlis Peterson">6816f79cc0a8016401c5a33be04be441</run_as>
         <run_as_tz/>
         <run_dayofmonth>1</run_dayofmonth>
         <run_dayofweek>1</run_dayofweek>
@@ -44,15 +47,13 @@
         <sys_class_name>cert_instance</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-03-28 06:47:09</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d12f147a1309db00ccd656e12244b0a1</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_name>Business Application Certification Quarterly</sys_name>
-        <sys_package display_value="Application Portfolio Management" source="sn_apm">65c1ca2cdbb2120091285411cf961963</sys_package>
+        <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>cert_instance_d12f147a1309db00ccd656e12244b0a1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
@@ -61,6 +62,7 @@
         <task_description>Remedy the discrepancies listed in the Audit Results below</task_description>
         <template/>
         <threshold_count>5</threshold_count>
+        <time_zone/>
         <upgrade_safe>false</upgrade_safe>
         <user/>
     </cert_instance>

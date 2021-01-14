@@ -1,18 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_embedded_help_role">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
     <sys_embedded_help_role action="INSERT_OR_UPDATE">
         <order>1000</order>
         <role display_value="x_snc_sn_slack_int.sn_slack_integration" name="x_snc_sn_slack_int.sn_slack_integration">2fc2bcf113cd9300ccd656e12244b02b</role>
         <sys_class_name>sys_embedded_help_role</sys_class_name>
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2018-03-25 05:39:51</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>12f2bcf113cd9300ccd656e12244b034</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>2fc2bcf113cd9300ccd656e12244b02b</sys_name>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_embedded_help_role_12f2bcf113cd9300ccd656e12244b034</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>

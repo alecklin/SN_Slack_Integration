@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sp_page">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
     <sp_page action="INSERT_OR_UPDATE">
         <category>custom</category>
         <css/>
@@ -7,24 +6,25 @@
         <dynamic_title_structure/>
         <id>slack_integration_config</id>
         <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
         <public>false</public>
         <roles>x_snc_sn_slack_int.sn_slack_integration</roles>
+        <seo_script/>
         <short_description/>
         <sys_class_name>sp_page</sys_class_name>
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2018-03-25 05:44:11</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_id>80e3b07513cd9300ccd656e12244b03a</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>slack_integration_config</sys_name>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sp_page_80e3b07513cd9300ccd656e12244b03a</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
         <sys_updated_on>2018-03-25 05:44:40</sys_updated_on>
         <title>Slack Integration Config</title>
+        <use_seo_script>false</use_seo_script>
     </sp_page>
     <sys_translated_text action="delete_multiple" query="documentkey=80e3b07513cd9300ccd656e12244b03a"/>
 </record_update>

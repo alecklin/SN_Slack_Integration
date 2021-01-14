@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_ui_module">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
     <sys_ui_module action="INSERT_OR_UPDATE">
         <active>true</active>
         <application display_value="SN Slack Integration">f073b43513cd9300ccd656e12244b0a6</application>
@@ -12,7 +11,6 @@
         <sys_class_name>sys_ui_module</sys_class_name>
         <sys_created_by>aleck.lin</sys_created_by>
         <sys_created_on>2018-03-25 05:41:57</sys_created_on>
-        <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b073b43513cd9300ccd656e12244b0a8</sys_id>
@@ -20,7 +18,6 @@
         <sys_name>Preferences</sys_name>
         <sys_package display_value="SN_Slack_Integration" source="x_snc_sn_slack_int">019fa11413099784ccd656e12244b09b</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="SN_Slack_Integration">019fa11413099784ccd656e12244b09b</sys_scope>
         <sys_update_name>sys_ui_module_b073b43513cd9300ccd656e12244b0a8</sys_update_name>
         <sys_updated_by>aleck.lin</sys_updated_by>
